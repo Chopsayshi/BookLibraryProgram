@@ -1,4 +1,6 @@
-package booklibraryprogram;
+package BookLibraryProgramV2;
+
+
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -33,7 +35,7 @@ public class LoginScreen extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        jExitBtn = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(1280, 720));
@@ -51,10 +53,10 @@ public class LoginScreen extends javax.swing.JPanel {
 
         jPasswordField1.addActionListener(this::jPasswordField1ActionPerformed);
 
-        jButton1.setText("Exit");
-        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+        jExitBtn.setText("Exit");
+        jExitBtn.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jButton1KeyPressed(evt);
+                jExitBtnKeyPressed(evt);
             }
         });
 
@@ -66,7 +68,7 @@ public class LoginScreen extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(jExitBtn)
                 .addGap(35, 35, 35))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -111,7 +113,7 @@ public class LoginScreen extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
                 .addGap(234, 234, 234)
-                .addComponent(jButton1)
+                .addComponent(jExitBtn)
                 .addGap(22, 22, 22))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -124,14 +126,15 @@ public class LoginScreen extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
-    private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1KeyPressed
+    private void jExitBtnKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jExitBtnKeyPressed
+        // This will close the program.
+        System.exit(0);
+    }//GEN-LAST:event_jExitBtnKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jExitBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

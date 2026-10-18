@@ -1,19 +1,21 @@
+package BookLibraryProgramV2;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package booklibraryprogram;
+
 
 /**
  *
  * @author chops
  */
-public class BasicUserMenu extends javax.swing.JPanel {
+public class AdminUserMenu extends javax.swing.JPanel {
 
     /**
-     * Creates new form BasicUserMenu
+     * Creates new form AdminUserMenu
      */
-    public BasicUserMenu() {
+    public AdminUserMenu() {
         initComponents();
     }
 
@@ -42,9 +44,8 @@ public class BasicUserMenu extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jLabel1)
-                .addContainerGap(272, Short.MAX_VALUE))
+                .addGap(0, 278, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
