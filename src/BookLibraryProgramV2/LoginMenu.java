@@ -36,7 +36,7 @@ public class LoginMenu extends javax.swing.JFrame {
         PasswordLbl = new javax.swing.JLabel();
         jPasswordTxt = new javax.swing.JPasswordField();
         jLoginBtn = new javax.swing.JButton();
-        jExitBtn = new javax.swing.JButton();
+        jExitLoginBtn = new javax.swing.JButton();
         jAddUserBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -62,11 +62,11 @@ public class LoginMenu extends javax.swing.JFrame {
         jLoginBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLoginBtn.setText("LOGIN");
 
-        jExitBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jExitBtn.setText("Exit");
-        jExitBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        jExitLoginBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jExitLoginBtn.setText("Exit");
+        jExitLoginBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jExitBtnMouseClicked(evt);
+                jExitLoginBtnMouseClicked(evt);
             }
         });
 
@@ -82,7 +82,7 @@ public class LoginMenu extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addComponent(jAddUserBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1017, Short.MAX_VALUE)
-                .addComponent(jExitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jExitLoginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
             .addGroup(layout.createSequentialGroup()
                 .addGap(448, 448, 448)
@@ -122,7 +122,7 @@ public class LoginMenu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 272, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jAddUserBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jExitBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
+                    .addComponent(jExitLoginBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
                 .addGap(24, 24, 24))
         );
 
@@ -137,12 +137,12 @@ public class LoginMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordTxtActionPerformed
 
-    private void jExitBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jExitBtnMouseClicked
+    private void jExitLoginBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jExitLoginBtnMouseClicked
         
         // Closes the entire program
         System.exit(0);
 
-    }//GEN-LAST:event_jExitBtnMouseClicked
+    }//GEN-LAST:event_jExitLoginBtnMouseClicked
 
     private void jAddUserBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAddUserBtnActionPerformed
         // Switches to the Add User Menu
@@ -188,7 +188,7 @@ public class LoginMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel PasswordLbl;
     private javax.swing.JButton jAddUserBtn;
-    private javax.swing.JButton jExitBtn;
+    private javax.swing.JButton jExitLoginBtn;
     private javax.swing.JButton jLoginBtn;
     private javax.swing.JLabel jLoginMenuLbl;
     private javax.swing.JPasswordField jPasswordTxt;

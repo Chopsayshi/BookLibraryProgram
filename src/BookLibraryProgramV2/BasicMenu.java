@@ -4,6 +4,8 @@
  */
 package BookLibraryProgramV2;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author chops
@@ -28,17 +30,27 @@ public class BasicMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jExitBtn1 = new javax.swing.JButton();
+        jExitBasicMenuBtn = new javax.swing.JButton();
+        jBasicMenuLbl = new javax.swing.JLabel();
+        jLogoutBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Library Program: Basic Menu");
 
-        jExitBtn1.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jExitBtn1.setText("Exit");
-        jExitBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jExitBasicMenuBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jExitBasicMenuBtn.setText("Exit");
+        jExitBasicMenuBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jExitBtn1MouseClicked(evt);
+                jExitBasicMenuBtnMouseClicked(evt);
             }
         });
+
+        jBasicMenuLbl.setFont(new java.awt.Font("Calibri", 0, 28)); // NOI18N
+        jBasicMenuLbl.setText("Basic Menu");
+
+        jLogoutBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLogoutBtn.setText("Logout");
+        jLogoutBtn.addActionListener(this::jLogoutBtnActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -46,25 +58,52 @@ public class BasicMenu extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jExitBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(308, Short.MAX_VALUE))
+                .addComponent(jExitBasicMenuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLogoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(558, 558, 558)
+                .addComponent(jBasicMenuLbl)
+                .addContainerGap(591, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(253, 253, 253)
-                .addComponent(jExitBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(31, 31, 31)
+                .addComponent(jBasicMenuLbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 589, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLogoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jExitBasicMenuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jExitBtn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jExitBtn1MouseClicked
+    private void jExitBasicMenuBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jExitBasicMenuBtnMouseClicked
 
         // Closes the entire program
         System.exit(0);
-    }//GEN-LAST:event_jExitBtn1MouseClicked
+    }//GEN-LAST:event_jExitBasicMenuBtnMouseClicked
+
+    private void jLogoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLogoutBtnActionPerformed
+        //TO DO: Clear saved user
+
+        // Switches to LoginMenu
+        LoginMenu login = new LoginMenu();
+        login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Setting static screen size
+        login.setSize(1280, 750);
+
+        // Centering frame
+        login.setLocation(300,200);
+
+        login.show(true);
+        this.dispose();
+    }//GEN-LAST:event_jLogoutBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -92,6 +131,8 @@ public class BasicMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jExitBtn1;
+    private javax.swing.JLabel jBasicMenuLbl;
+    private javax.swing.JButton jExitBasicMenuBtn;
+    private javax.swing.JButton jLogoutBtn;
     // End of variables declaration//GEN-END:variables
 }

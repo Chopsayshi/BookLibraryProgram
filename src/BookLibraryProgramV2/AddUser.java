@@ -52,7 +52,6 @@ public class AddUser extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Library Program: Add User Menu");
-        setPreferredSize(new java.awt.Dimension(1280, 720));
         setSize(new java.awt.Dimension(1280, 720));
 
         jBackAddUserBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N

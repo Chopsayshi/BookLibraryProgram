@@ -34,7 +34,7 @@
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Component id="jAddUserBtn" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="1017" max="32767" attributes="0"/>
-              <Component id="jExitBtn" min="-2" pref="86" max="-2" attributes="0"/>
+              <Component id="jExitLoginBtn" min="-2" pref="86" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
@@ -86,7 +86,7 @@
               <EmptySpace pref="272" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jAddUserBtn" max="32767" attributes="0"/>
-                  <Component id="jExitBtn" pref="41" max="32767" attributes="0"/>
+                  <Component id="jExitLoginBtn" pref="41" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
           </Group>
@@ -146,7 +146,7 @@
         <Property name="text" type="java.lang.String" value="LOGIN"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jExitBtn">
+    <Component class="javax.swing.JButton" name="jExitLoginBtn">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Calibri" size="18" style="0"/>
@@ -154,7 +154,7 @@
         <Property name="text" type="java.lang.String" value="Exit"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jExitBtnMouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jExitLoginBtnMouseClicked"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jAddUserBtn">

@@ -4,6 +4,8 @@
  */
 package BookLibraryProgramV2;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author chops
@@ -34,9 +36,13 @@ public class AddBook extends javax.swing.JFrame {
         jAddBookBtn = new javax.swing.JButton();
         jSetAuthorTxt = new javax.swing.JTextField();
         jAddBookMenuLbl = new javax.swing.JLabel();
-        jExitBtn = new javax.swing.JButton();
+        jExitAddBookBtn = new javax.swing.JButton();
+        jAddBookBackBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Library Program: Add Book Menu");
+        setPreferredSize(new java.awt.Dimension(1280, 720));
+        setSize(new java.awt.Dimension(1280, 720));
 
         jSetTitleLbl.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jSetTitleLbl.setText("Set Title:");
@@ -57,49 +63,56 @@ public class AddBook extends javax.swing.JFrame {
         jAddBookMenuLbl.setFont(new java.awt.Font("Calibri", 0, 28)); // NOI18N
         jAddBookMenuLbl.setText("Add Book Menu");
 
-        jExitBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jExitBtn.setText("Exit");
-        jExitBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        jExitAddBookBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jExitAddBookBtn.setText("Exit");
+        jExitAddBookBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jExitBtnMouseClicked(evt);
+                jExitAddBookBtnMouseClicked(evt);
             }
         });
+
+        jAddBookBackBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jAddBookBackBtn.setText("Back");
+        jAddBookBackBtn.addActionListener(this::jAddBookBackBtnActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 277, Short.MAX_VALUE)
-                .addComponent(jAddBookMenuLbl)
-                .addGap(321, 321, 321))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(198, 198, 198)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(JSetAuthorLbl)
-                                .addGap(18, 18, 18)
-                                .addComponent(jSetAuthorTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jSetTitleLbl)
-                                .addGap(26, 26, 26)
-                                .addComponent(jSetTitleTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(538, 538, 538)
+                        .addComponent(jAddBookMenuLbl))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(341, 341, 341)
-                        .addComponent(jAddBookBtn))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jExitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(433, 433, 433)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(JSetAuthorLbl)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jSetAuthorTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jSetTitleLbl)
+                                    .addGap(26, 26, 26)
+                                    .addComponent(jSetTitleTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(143, 143, 143)
+                                .addComponent(jAddBookBtn)))))
+                .addContainerGap(547, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jExitAddBookBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jAddBookBackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(16, 16, 16)
                 .addComponent(jAddBookMenuLbl)
-                .addGap(143, 143, 143)
+                .addGap(219, 219, 219)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jSetTitleLbl)
                     .addComponent(jSetTitleTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -109,8 +122,10 @@ public class AddBook extends javax.swing.JFrame {
                     .addComponent(JSetAuthorLbl))
                 .addGap(18, 18, 18)
                 .addComponent(jAddBookBtn)
-                .addGap(120, 120, 120)
-                .addComponent(jExitBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 284, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jExitAddBookBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jAddBookBackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -129,11 +144,27 @@ public class AddBook extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jSetAuthorTxtActionPerformed
 
-    private void jExitBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jExitBtnMouseClicked
+    private void jExitAddBookBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jExitAddBookBtnMouseClicked
 
         // Closes the entire program
         System.exit(0);
-    }//GEN-LAST:event_jExitBtnMouseClicked
+    }//GEN-LAST:event_jExitAddBookBtnMouseClicked
+
+    private void jAddBookBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAddBookBackBtnActionPerformed
+        // Switches to the Admin Menu
+        AdminMenu admin = new AdminMenu();
+        admin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        // Setting static screen size
+        admin.setSize(1280, 750);
+        
+        // Centering frame
+        admin.setLocation(300,200);
+        
+        admin.show(true);
+               
+        this.dispose();
+    }//GEN-LAST:event_jAddBookBackBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,9 +193,10 @@ public class AddBook extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JSetAuthorLbl;
+    private javax.swing.JButton jAddBookBackBtn;
     private javax.swing.JButton jAddBookBtn;
     private javax.swing.JLabel jAddBookMenuLbl;
-    private javax.swing.JButton jExitBtn;
+    private javax.swing.JButton jExitAddBookBtn;
     private javax.swing.JTextField jSetAuthorTxt;
     private javax.swing.JLabel jSetTitleLbl;
     private javax.swing.JTextField jSetTitleTxt;
