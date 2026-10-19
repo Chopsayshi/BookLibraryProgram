@@ -1,15 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package BookLibraryProgramV2;
 
-/**
- *
- * @author chops
- */
+import javax.swing.JFrame;
+
+
+
 public class BookLibraryProgram {
+
     public static void main(String[] args) {
+        LoginMenu f = new LoginMenu();
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        // Setting static screen size
+        int WIDTH = 1280;
+        int HEIGHT = 750;
+        f.setSize(WIDTH, HEIGHT);
+        
+        // Centering frame
+        int X = 300;
+        int Y = 200;
+        f.setLocation(X,Y);
+        
+        f.setVisible(true);
         
     }
 }
