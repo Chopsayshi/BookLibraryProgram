@@ -146,7 +146,7 @@ public class LoginMenu extends javax.swing.JFrame {
 
     private void jAddUserBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAddUserBtnActionPerformed
         // Switches to the Add User Menu
-        AddUser add = new AddUser();
+        AddUserMenu add = new AddUserMenu();
         add.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         // Setting static screen size

@@ -34,13 +34,15 @@ public class AdminMenu extends javax.swing.JFrame {
         jExitAdminBtn = new javax.swing.JButton();
         jAdminMenu1Lbl = new javax.swing.JLabel();
         jLogoutBtn = new javax.swing.JButton();
+        jDeleteBooksMenuBtn = new javax.swing.JButton();
+        jAddBookMenuBtn = new javax.swing.JButton();
+        jUpdateBookBtn = new javax.swing.JButton();
 
         jAdminMenuLbl.setFont(new java.awt.Font("Calibri", 0, 28)); // NOI18N
         jAdminMenuLbl.setText("Admin Menu");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Library Program: Admin Menu");
-        setPreferredSize(new java.awt.Dimension(1280, 720));
         setSize(new java.awt.Dimension(1280, 720));
 
         jExitAdminBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
@@ -58,6 +60,18 @@ public class AdminMenu extends javax.swing.JFrame {
         jLogoutBtn.setText("Logout");
         jLogoutBtn.addActionListener(this::jLogoutBtnActionPerformed);
 
+        jDeleteBooksMenuBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jDeleteBooksMenuBtn.setText("Delete Books");
+        jDeleteBooksMenuBtn.addActionListener(this::jDeleteBooksMenuBtnActionPerformed);
+
+        jAddBookMenuBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jAddBookMenuBtn.setText("Add Book");
+        jAddBookMenuBtn.addActionListener(this::jAddBookMenuBtnActionPerformed);
+
+        jUpdateBookBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jUpdateBookBtn.setText("Update Books");
+        jUpdateBookBtn.addActionListener(this::jUpdateBookBtnActionPerformed);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -72,13 +86,30 @@ public class AdminMenu extends javax.swing.JFrame {
                 .addContainerGap(576, Short.MAX_VALUE)
                 .addComponent(jAdminMenu1Lbl)
                 .addGap(556, 556, 556))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(205, 205, 205)
+                .addComponent(jAddBookMenuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
+                .addComponent(jDeleteBooksMenuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65)
+                .addComponent(jUpdateBookBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jAdminMenu1Lbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 616, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(180, 180, 180)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jAddBookMenuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jDeleteBooksMenuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(181, 181, 181)
+                        .addComponent(jUpdateBookBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 221, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jExitAdminBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLogoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -111,6 +142,54 @@ public class AdminMenu extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLogoutBtnActionPerformed
 
+    private void jDeleteBooksMenuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDeleteBooksMenuBtnActionPerformed
+        // Switches to the DeleteBooksMenu
+        DeleteBooksMenu delete = new DeleteBooksMenu();
+        delete.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        // Setting static screen size
+        delete.setSize(1280, 750);
+        
+        // Centering frame
+        delete.setLocation(300,200);
+        
+        delete.show(true);
+               
+        this.dispose();
+    }//GEN-LAST:event_jDeleteBooksMenuBtnActionPerformed
+
+    private void jAddBookMenuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAddBookMenuBtnActionPerformed
+        // Switches to the AddBookMenu
+        AddBookMenu add = new AddBookMenu();
+        add.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        // Setting static screen size
+        add.setSize(1280, 750);
+        
+        // Centering frame
+        add.setLocation(300,200);
+        
+        add.show(true);
+               
+        this.dispose();
+    }//GEN-LAST:event_jAddBookMenuBtnActionPerformed
+
+    private void jUpdateBookBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUpdateBookBtnActionPerformed
+        // Switches to the UpdateBookMenu
+        UpdateBookMenu update = new UpdateBookMenu();
+        update.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        // Setting static screen size
+        update.setSize(1280, 750);
+        
+        // Centering frame
+        update.setLocation(300,200);
+        
+        update.show(true);
+               
+        this.dispose();
+    }//GEN-LAST:event_jUpdateBookBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -137,9 +216,12 @@ public class AdminMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jAddBookMenuBtn;
     private javax.swing.JLabel jAdminMenu1Lbl;
     private javax.swing.JLabel jAdminMenuLbl;
+    private javax.swing.JButton jDeleteBooksMenuBtn;
     private javax.swing.JButton jExitAdminBtn;
     private javax.swing.JButton jLogoutBtn;
+    private javax.swing.JButton jUpdateBookBtn;
     // End of variables declaration//GEN-END:variables
 }
