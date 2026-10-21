@@ -1,6 +1,8 @@
 
 package BookLibraryProgramV2;
 
+import java.sql.SQLException;
+
 
 public class LoginMenu extends javax.swing.JFrame {
     
@@ -134,9 +136,10 @@ public class LoginMenu extends javax.swing.JFrame {
 
     private void jPasswordTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordTxtActionPerformed
         // Debug Test
-        String password = jPasswordTxt.getText();
+        char[] passwordChar = jPasswordTxt.getPassword();
+        String password = new String(passwordChar);
         
-        System.out.println("You Entered: "+ password);
+        System.out.println("Pass Entered: "+ password);
     }//GEN-LAST:event_jPasswordTxtActionPerformed
 
     private void jExitLoginBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jExitLoginBtnMouseClicked
@@ -155,12 +158,18 @@ public class LoginMenu extends javax.swing.JFrame {
     private void jLoginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLoginBtnActionPerformed
         // Debug Test
         String username = jUsernameTxt.getText();
-        String password = jPasswordTxt.getText();
+        char[] passwordChar = jPasswordTxt.getPassword();
+        String password = new String(passwordChar);
         
-        System.out.println("You Entered: "+ password + username);
+        System.out.println("You Entered: "+ username +" Password: " + password);
         
         Login log = new Login(username,password);
-        if (log.userExsists()) {
+        
+        System.out.println(log.getUser()+ " with "+ log.getPass());
+        
+        try {
+            log.checkUserDetails();
+            if (log.userExsists()) {
             if (log.passMatch()) {
                 // Password and username match a single user
                 if(log.isAdmin()){
@@ -178,13 +187,18 @@ public class LoginMenu extends javax.swing.JFrame {
             }
             else {
                 // Password does not match the users password
-                // popup error
+                javax.swing.JOptionPane.showMessageDialog(this, "Error: Incorrect password or username, try again");
             }
         }
         else {
             // No user is found
-            // popup error
+                javax.swing.JOptionPane.showMessageDialog(this, "Error: User not found, try again");
         }
+            
+        } catch (SQLException ex) {
+            System.getLogger(LoginMenu.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+        
     }//GEN-LAST:event_jLoginBtnActionPerformed
 
     private void jExitLoginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jExitLoginBtnActionPerformed

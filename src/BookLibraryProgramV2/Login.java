@@ -1,36 +1,67 @@
 
 package BookLibraryProgramV2;
 
+import java.sql.SQLException;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 public class Login {
-    
     public String username;
     public String password;
     public boolean admin;
-
+    public boolean userExsistKey = false;
+    public boolean passMatchKey = false;
     
     public Login(String user, String pass){
         this.username = user;
         this.password = pass;
     }
     
-    // Check if the user is in the database
-
+    public String getUser() {
+        return this.username;
+    }
     
+    public String getPass() {
+        return this.password;
+    }
+    
+    public boolean isAdmin() {
+        return this.admin;
+    }
+
+    public void checkUserDetails() throws SQLException {
+        DBManager db = new DBManager();
+        
+        String sql = "SELECT password, admin FROM ACCOUNT WHERE username = ?";
+        
+        try (PreparedStatement prep = db.getConnection().prepareStatement(sql)){
+            prep.setString(1,this.username);
+            ResultSet rs = prep.executeQuery();
+            
+            if(rs.next()) {
+                this.userExsistKey = true;
+                String dbPass = rs.getString("password");
+                boolean dbAdmin = rs.getBoolean("admin");
+            
+                if(dbPass.equals(this.password)) {
+                    this.passMatchKey = true;
+                    this.admin = dbAdmin;
+                }
+            
+        } 
+    }catch (SQLException ex) {
+        System.err.println(ex.getMessage());        
+    }
+        
+    }
+    // Check if the user is in the database 
     public boolean userExsists() {
-        boolean value = true;
-        return value;
+        return this.userExsistKey;
     }
     
     // Check if the user is in the database
     public boolean passMatch() {
-        boolean value = true;
-        return value;
-    }
-    
-    // Check if the user is an admin or not
-    public boolean isAdmin() {
-        boolean value = true;
-        return value;
+        return this.passMatchKey;
     }
 
 }

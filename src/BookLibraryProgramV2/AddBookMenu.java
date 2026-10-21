@@ -1,6 +1,8 @@
 
 package BookLibraryProgramV2;
 
+import java.sql.SQLException;
+
 public class AddBookMenu extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AddBookMenu.class.getName());
@@ -137,11 +139,13 @@ public class AddBookMenu extends javax.swing.JFrame {
         
         System.out.println("You Entered: "+ title + author);
         
-        // Check if text was entered in both fields
-        // Check if the title already exsists, if it does check if the book has the same author
-        // If true then false false send out popup: ("Are you sure you would like to add the book: "+ title+ " " + author);
-        // if yes add to database
-        // if no restart
+        Book b = new Book(title,author);
+        try {
+            b.addBook();
+            System.out.println("The book"+b.getTitle()+b.getAuthor()+" was added");
+        } catch (SQLException ex) {
+            System.getLogger(AddBookMenu.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
     }//GEN-LAST:event_jAddBookBtnActionPerformed
 
     private void jSetAuthorTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSetAuthorTxtActionPerformed

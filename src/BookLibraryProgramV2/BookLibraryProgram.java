@@ -7,11 +7,8 @@ public class BookLibraryProgram {
     public static void main(String[] args) throws SQLException {
         
         //Loads Initial Menu: Login Menu
-//        LoadFrame.LoginMenu();
+        LoadFrame.LoginMenu();
         
-        BookLibrary bl = new BookLibrary();
-        bl.getQuery();
-
     }
     
     
