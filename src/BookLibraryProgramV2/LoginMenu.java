@@ -124,11 +124,17 @@ public class LoginMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jUsernameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUsernameTxtActionPerformed
-        // TODO add your handling code here:
+        // Debug Test
+        String username = jUsernameTxt.getText();
+        
+        System.out.println("You Entered: "+ username);
     }//GEN-LAST:event_jUsernameTxtActionPerformed
 
     private void jPasswordTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordTxtActionPerformed
-        // TODO add your handling code here:
+        // Debug Test
+        String password = jPasswordTxt.getText();
+        
+        System.out.println("You Entered: "+ password);
     }//GEN-LAST:event_jPasswordTxtActionPerformed
 
     private void jExitLoginBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jExitLoginBtnMouseClicked
@@ -145,7 +151,36 @@ public class LoginMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jAddUserBtnActionPerformed
 
     private void jLoginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLoginBtnActionPerformed
+        // Debug Test
+        String username = jUsernameTxt.getText();
+        String password = jPasswordTxt.getText();
         
+        System.out.println("You Entered: "+ password + username);
+        
+        Login log = new Login(username,password);
+        if (log.userExsists()) {
+            if (log.passMatch()) {
+                // Password and username match a single user
+                if(log.isAdmin()){
+                    // User is an admin
+                    LoadFrame.AdminMenu();
+                }
+                else {
+                    // User is not an admin
+                    LoadFrame.BasicMenu();
+                }
+            }
+            else {
+                // Password does not match the users password
+                // popup error
+            }
+        }
+        else {
+            // No user is found
+            // popup error
+        }
+        
+
     }//GEN-LAST:event_jLoginBtnActionPerformed
 
     private void jExitLoginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jExitLoginBtnActionPerformed
