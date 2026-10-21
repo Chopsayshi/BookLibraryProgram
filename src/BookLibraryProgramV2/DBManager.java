@@ -4,10 +4,6 @@ package BookLibraryProgramV2;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-
 
 public class DBManager {
         // Not needed for the embedded version
@@ -38,7 +34,7 @@ public class DBManager {
                 // Debug Test
                 System.out.println(url+"Connected..");
             } catch (SQLException ex) {
-                Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, ex);
+                System.err.println(ex.getMessage());
             }
         }
     }
@@ -52,7 +48,7 @@ public class DBManager {
                 // Debug Test
                 System.out.println(url+"Connected..");
             } catch (SQLException ex) {
-                Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, ex);
+                System.err.println(ex.getMessage());
             }
         }
     }
@@ -62,7 +58,7 @@ public class DBManager {
             try {
                 conn.close();
             } catch (SQLException ex) {
-                Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, ex);
+                System.err.println(ex.getMessage());
             }
         }
     }

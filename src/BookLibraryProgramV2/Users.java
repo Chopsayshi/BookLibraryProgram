@@ -12,7 +12,7 @@ public class Users {
         
         public Users() {
             ldDatabases = new DBManager();
-            conn = ldDatabases.getConnection();;
+            conn = ldDatabases.getConnection();
         }
         
     
