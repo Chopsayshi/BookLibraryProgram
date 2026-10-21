@@ -131,7 +131,7 @@ public class DeleteBooksMenu extends javax.swing.JFrame {
 
     private void jDeleteBooksBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDeleteBooksBackBtnActionPerformed
         // Switches to the Admin Menu
-        LoadFrame.AdminMenu();
+//        LoadFrame.AdminMenu();
         
         // Closes this menu
         this.dispose();

@@ -1,8 +1,6 @@
 
 package BookLibraryProgramV2;
 
-
-
 public class Login {
     
     public String username;

@@ -3,53 +3,36 @@ package BookLibraryProgramV2;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
-public class DBManager {
-        // Not needed for the embedded version
-//      public static String username = "pdc";
-//      public static String password = "pdc";
-        
-    public static String url;
+public final class DBManager {
+    public static final String USERNAME = "pdc";
+    public static final String PASSWORD = "pdc";
+    public final String URL = "jdbc:derby:LibraryDB; create=true";
     Connection conn;
     
     public DBManager() {
-        
+        establishConnection();
     }
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         DBManager dbManager = new DBManager();
+        System.out.println(dbManager.getConnection());
     }
     
     public Connection getConnection() {
         return this.conn;
     }
         
-    public void establishUserDBConnection() {
-        url = "jdbc:derby:UserDB; create=true";
-        
-        if (this.conn == null) {
-            try {
-                conn = DriverManager.getConnection(url);
-                // Debug Test
-                System.out.println(url+"Connected..");
-            } catch (SQLException ex) {
-                System.err.println(ex.getMessage());
-            }
+    public void establishConnection() {
+        try {
+            conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+            System.out.println(URL+" Connected..");
         }
-    }
-    
-    public void establishBookDBConnection() {
-        url = "jdbc:derby:BookDB; create=true";
-        
-        if (this.conn == null) {
-            try {
-                conn = DriverManager.getConnection(url);
-                // Debug Test
-                System.out.println(url+"Connected..");
-            } catch (SQLException ex) {
-                System.err.println(ex.getMessage());
-            }
+        catch (SQLException ex) {
+            System.err.println(ex.getMessage());
         }
     }
     
@@ -62,59 +45,36 @@ public class DBManager {
             }
         }
     }
-    
+    public ResultSet queryDB(String sql) {
 
-    
-//    public static void LoadUserDB() throws SQLException 
-//    {
-//        // Embedded Version
-//        url = "jdbc:derby:UserDB; create=true";
-//        
-//        try {
-//            conn = DriverManager.getConnection("jdbc:derby:UserDB; create=true");
-//            System.out.println(url+"Connected..");
-//        }
-//        catch (SQLException ex) {
-//            System.err.println("SQLException: "+ex.getMessage());
-//        }
-//        
-//        // Derby Network Server Version
-////        url = "jdbc:derby://localhost:1527/UserDB; create=true";
-////        
-////        try {
-////            conn = DriverManager.getConnection(url,username,password);
-////            System.out.println(url+"Connected..");
-////        }
-////        catch (SQLException ex) {
-////            System.err.println("SQLException: "+ex.getMessage());
-////        }
-//    }
-//    
-//    public static void LoadBookDB() throws SQLException 
-//    {
-//        
-//        // Embedded Version
-//        url = "jdbc:derby:BookDB; create=true";
-//        
-//        try {
-//            conn = DriverManager.getConnection("jdbc:derby:BookDB; create=true");
-//            System.out.println(url+"Connected..");
-//        }
-//        catch (SQLException ex) {
-//            System.err.println("SQLException: "+ex.getMessage());
-//        }
-//        
-//        // Derby Network Server Version
-////        url = "jdbc:derby://localhost:1527/BookDB; create=true";
-//        
-////        try {
-////            conn = DriverManager.getConnection(url,username,password);
-////            System.out.println(url+"Connected..");
-////        }
-////        catch (SQLException ex) {
-////            System.err.println("SQLException: "+ex.getMessage());
-////        }
-//    }
+        Connection connection = this.conn;
+        Statement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(sql);
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return resultSet;
+    }
+
+    public void updateDB(String sql) {
+
+        Connection connection = this.conn;
+        Statement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            statement = connection.createStatement();
+            statement.executeUpdate(sql);
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
     
 }
 

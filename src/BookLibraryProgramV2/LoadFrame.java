@@ -25,9 +25,6 @@ public class LoadFrame {
             
             // Displays menu
             f.setVisible(true);
-            
-            DBManager db1 = new DBManager();
-            db1.establishUserDBConnection();
         }
         
         public static void AddUserMenu() {
@@ -42,8 +39,6 @@ public class LoadFrame {
             
             // Displays menu
             addU.setVisible(true);
-            DBManager db2 = new DBManager();
-            db2.establishUserDBConnection();
         }
         
         public static void AdminMenu() {
@@ -58,8 +53,6 @@ public class LoadFrame {
 
             // Displays menu
             admin.setVisible(true);
-            DBManager db3 = new DBManager();
-            db3.closeConnections();
         }
 
         public static void AddBookMenu() {
@@ -74,8 +67,7 @@ public class LoadFrame {
 
             // Displays menu
             addB.setVisible(true);
-            DBManager db4 = new DBManager();
-            db4.establishBookDBConnection();
+
         }
         
         public static void UpdateBookMenu() {
@@ -90,8 +82,6 @@ public class LoadFrame {
             
             // Displays menu
             update.setVisible(true);
-            DBManager db5 = new DBManager();
-            db5.establishBookDBConnection();
         }
         
         public static void DeleteBookMenu() {
@@ -106,8 +96,6 @@ public class LoadFrame {
             
             // Displays menu
             delete.setVisible(true);
-            DBManager db6 = new DBManager();
-            db6.establishBookDBConnection();
         }
         
         public static void BasicMenu() {
@@ -122,8 +110,6 @@ public class LoadFrame {
             
             // Displays menu
             basic.setVisible(true);
-            DBManager db7 = new DBManager();
-            db7.closeConnections();
         }
         
         public static void BorrowBooksMenu() {
@@ -138,8 +124,6 @@ public class LoadFrame {
             
             // Displays menu
             borrow.setVisible(true);
-            DBManager db8 = new DBManager();
-            db8.establishBookDBConnection();
         }
         
         public static void ReturnBooksMenu() {
@@ -154,7 +138,5 @@ public class LoadFrame {
             
             // Displays menu
             returns.setVisible(true);
-            DBManager db9 = new DBManager();
-            db9.establishBookDBConnection();
         }
 }
