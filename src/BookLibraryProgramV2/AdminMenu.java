@@ -62,6 +62,7 @@ public class AdminMenu extends javax.swing.JFrame {
 
         jUpdateBookBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jUpdateBookBtn.setText("Update Books");
+        jUpdateBookBtn.setEnabled(false);
         jUpdateBookBtn.addActionListener(this::jUpdateBookBtnActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

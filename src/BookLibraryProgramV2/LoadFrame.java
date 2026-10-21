@@ -26,7 +26,7 @@ public class LoadFrame {
             // Displays menu
             f.setVisible(true);
             
-            LoadDatabases db1 = new LoadDatabases();
+            DBManager db1 = new DBManager();
             db1.establishUserDBConnection();
         }
         
@@ -42,7 +42,7 @@ public class LoadFrame {
             
             // Displays menu
             addU.setVisible(true);
-            LoadDatabases db2 = new LoadDatabases();
+            DBManager db2 = new DBManager();
             db2.establishUserDBConnection();
         }
         
@@ -58,7 +58,7 @@ public class LoadFrame {
 
             // Displays menu
             admin.setVisible(true);
-            LoadDatabases db3 = new LoadDatabases();
+            DBManager db3 = new DBManager();
             db3.closeConnections();
         }
 
@@ -74,7 +74,7 @@ public class LoadFrame {
 
             // Displays menu
             addB.setVisible(true);
-            LoadDatabases db4 = new LoadDatabases();
+            DBManager db4 = new DBManager();
             db4.establishBookDBConnection();
         }
         
@@ -90,7 +90,7 @@ public class LoadFrame {
             
             // Displays menu
             update.setVisible(true);
-            LoadDatabases db5 = new LoadDatabases();
+            DBManager db5 = new DBManager();
             db5.establishBookDBConnection();
         }
         
@@ -106,7 +106,7 @@ public class LoadFrame {
             
             // Displays menu
             delete.setVisible(true);
-            LoadDatabases db6 = new LoadDatabases();
+            DBManager db6 = new DBManager();
             db6.establishBookDBConnection();
         }
         
@@ -122,7 +122,7 @@ public class LoadFrame {
             
             // Displays menu
             basic.setVisible(true);
-            LoadDatabases db7 = new LoadDatabases();
+            DBManager db7 = new DBManager();
             db7.closeConnections();
         }
         
@@ -138,7 +138,7 @@ public class LoadFrame {
             
             // Displays menu
             borrow.setVisible(true);
-            LoadDatabases db8 = new LoadDatabases();
+            DBManager db8 = new DBManager();
             db8.establishBookDBConnection();
         }
         
@@ -154,7 +154,7 @@ public class LoadFrame {
             
             // Displays menu
             returns.setVisible(true);
-            LoadDatabases db9 = new LoadDatabases();
+            DBManager db9 = new DBManager();
             db9.establishBookDBConnection();
         }
 }

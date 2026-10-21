@@ -3,15 +3,13 @@ package BookLibraryProgramV2;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
 
-public class LoadDatabases {
+public class DBManager {
         // Not needed for the embedded version
 //      public static String username = "pdc";
 //      public static String password = "pdc";
@@ -19,12 +17,12 @@ public class LoadDatabases {
     public static String url;
     Connection conn;
     
-    public LoadDatabases() {
+    public DBManager() {
         
     }
     
     public static void main(String[] args) {
-        LoadDatabases dbManager = new LoadDatabases();
+        DBManager dbManager = new DBManager();
     }
     
     public Connection getConnection() {
@@ -40,7 +38,7 @@ public class LoadDatabases {
                 // Debug Test
                 System.out.println(url+"Connected..");
             } catch (SQLException ex) {
-                Logger.getLogger(LoadDatabases.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
@@ -54,7 +52,7 @@ public class LoadDatabases {
                 // Debug Test
                 System.out.println(url+"Connected..");
             } catch (SQLException ex) {
-                Logger.getLogger(LoadDatabases.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
@@ -64,7 +62,7 @@ public class LoadDatabases {
             try {
                 conn.close();
             } catch (SQLException ex) {
-                Logger.getLogger(LoadDatabases.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }

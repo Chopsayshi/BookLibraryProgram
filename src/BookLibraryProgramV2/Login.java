@@ -1,17 +1,14 @@
 
 package BookLibraryProgramV2;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
 
 public class Login {
     
     public String username;
     public String password;
     public boolean admin;
+
     
     public Login(String user, String pass){
         this.username = user;
@@ -19,6 +16,8 @@ public class Login {
     }
     
     // Check if the user is in the database
+
+    
     public boolean userExsists() {
         boolean value = true;
         return value;

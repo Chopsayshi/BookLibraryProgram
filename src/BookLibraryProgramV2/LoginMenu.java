@@ -166,10 +166,14 @@ public class LoginMenu extends javax.swing.JFrame {
                 if(log.isAdmin()){
                     // User is an admin
                     LoadFrame.AdminMenu();
+                    // Closes this menu
+                    this.dispose();
                 }
                 else {
                     // User is not an admin
                     LoadFrame.BasicMenu();
+                    // Closes this menu
+                    this.dispose();
                 }
             }
             else {
