@@ -1,15 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package BookLibraryProgramV2;
 
-import javax.swing.JFrame;
-
-/**
- *
- * @author chops
- */
 public class DeleteBooksMenu extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(DeleteBooksMenu.class.getName());
@@ -71,6 +62,7 @@ public class DeleteBooksMenu extends javax.swing.JFrame {
                 jExitDeleteBookBtnMouseClicked(evt);
             }
         });
+        jExitDeleteBookBtn.addActionListener(this::jExitDeleteBookBtnActionPerformed);
 
         jDeleteBooksMenuLbl.setFont(new java.awt.Font("Calibri", 0, 28)); // NOI18N
         jDeleteBooksMenuLbl.setText("Delete Books Menu");
@@ -128,32 +120,27 @@ public class DeleteBooksMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jExitBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jExitBtnMouseClicked
-
-        // Closes the entire program
-        System.exit(0);
+        // Closes Program
+        Exit.Exit();
     }//GEN-LAST:event_jExitBtnMouseClicked
 
     private void jExitDeleteBookBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jExitDeleteBookBtnMouseClicked
-
-        // Closes the entire program
-        System.exit(0);
+        // Closes Program
+        Exit.Exit();
     }//GEN-LAST:event_jExitDeleteBookBtnMouseClicked
 
     private void jDeleteBooksBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDeleteBooksBackBtnActionPerformed
         // Switches to the Admin Menu
-        AdminMenu admin = new AdminMenu();
-        admin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        // Setting static screen size
-        admin.setSize(1280, 750);
-
-        // Centering frame
-        admin.setLocation(300,200);
-
-        admin.show(true);
-
+        LoadFrame.AdminMenu();
+        
+        // Closes this menu
         this.dispose();
     }//GEN-LAST:event_jDeleteBooksBackBtnActionPerformed
+
+    private void jExitDeleteBookBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jExitDeleteBookBtnActionPerformed
+        // Closes Program
+        Exit.Exit();
+    }//GEN-LAST:event_jExitDeleteBookBtnActionPerformed
 
     /**
      * @param args the command line arguments

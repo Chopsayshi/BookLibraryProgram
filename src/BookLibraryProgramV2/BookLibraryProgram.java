@@ -1,26 +1,17 @@
 package BookLibraryProgramV2;
 
-import javax.swing.JFrame;
-
-
+import java.sql.SQLException;
 
 public class BookLibraryProgram {
 
-    public static void main(String[] args) {
-        LoginMenu f = new LoginMenu();
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    public static void main(String[] args) throws SQLException {
         
-        // Setting static screen size
-        int WIDTH = 1280;
-        int HEIGHT = 750;
-        f.setSize(WIDTH, HEIGHT);
-        
-        // Centering frame
-        int X = 300;
-        int Y = 200;
-        f.setLocation(X,Y);
-        
-        f.setVisible(true);
+        // Loads Initial Menu: Login Menu
+        LoadFrame.LoginMenu();
+      
+        // Starts database connections
+        LoadDatabases.LoadUserDB();
+        LoadDatabases.LoadBookDB();
         
     }
 }

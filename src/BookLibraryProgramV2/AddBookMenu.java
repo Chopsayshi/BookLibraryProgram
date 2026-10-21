@@ -1,15 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package BookLibraryProgramV2;
 
-import javax.swing.JFrame;
-
-/**
- *
- * @author chops
- */
 public class AddBookMenu extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AddBookMenu.class.getName());
@@ -69,6 +60,7 @@ public class AddBookMenu extends javax.swing.JFrame {
                 jExitAddBookBtnMouseClicked(evt);
             }
         });
+        jExitAddBookBtn.addActionListener(this::jExitAddBookBtnActionPerformed);
 
         jAddBookBackBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jAddBookBackBtn.setText("Back");
@@ -144,26 +136,22 @@ public class AddBookMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jSetAuthorTxtActionPerformed
 
     private void jExitAddBookBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jExitAddBookBtnMouseClicked
-
-        // Closes the entire program
-        System.exit(0);
+        /// Closes Program
+        Exit.Exit();
     }//GEN-LAST:event_jExitAddBookBtnMouseClicked
 
     private void jAddBookBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAddBookBackBtnActionPerformed
         // Switches to the Admin Menu
-        AdminMenu admin = new AdminMenu();
-        admin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        LoadFrame.AdminMenu();
         
-        // Setting static screen size
-        admin.setSize(1280, 750);
-        
-        // Centering frame
-        admin.setLocation(300,200);
-        
-        admin.show(true);
-               
+        // Closes this menu
         this.dispose();
     }//GEN-LAST:event_jAddBookBackBtnActionPerformed
+
+    private void jExitAddBookBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jExitAddBookBtnActionPerformed
+        // Closes Program
+        Exit.Exit();
+    }//GEN-LAST:event_jExitAddBookBtnActionPerformed
 
     /**
      * @param args the command line arguments

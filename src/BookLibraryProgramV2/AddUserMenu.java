@@ -1,15 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package BookLibraryProgramV2;
 
-import javax.swing.JFrame;
-
-/**
- *
- * @author chops
- */
 public class AddUserMenu extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AddUserMenu.class.getName());
@@ -65,6 +56,7 @@ public class AddUserMenu extends javax.swing.JFrame {
                 jExitAddUserBtnMouseClicked(evt);
             }
         });
+        jExitAddUserBtn.addActionListener(this::jExitAddUserBtnActionPerformed);
 
         jUsernameLbl.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jUsernameLbl.setText("Set Username:");
@@ -157,15 +149,13 @@ public class AddUserMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jExitBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jExitBtnMouseClicked
-
-        // Closes the entire program
-        System.exit(0);
+        // Closes Program
+        Exit.Exit();
     }//GEN-LAST:event_jExitBtnMouseClicked
 
     private void jExitAddUserBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jExitAddUserBtnMouseClicked
-
-        // Closes the entire program
-        System.exit(0);
+        // Closes Program
+        Exit.Exit();
     }//GEN-LAST:event_jExitAddUserBtnMouseClicked
 
     private void jSetUsernameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSetUsernameTxtActionPerformed
@@ -178,22 +168,20 @@ public class AddUserMenu extends javax.swing.JFrame {
 
     private void jBackAddUserBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBackAddUserBtnActionPerformed
         // Opens LoginMenu and closes AddUser Menu
-        LoginMenu f = new LoginMenu();
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        LoadFrame.LoginMenu();
         
-        // Setting static screen size
-        f.setSize(1280, 750);
-        
-        // Centering frame
-        f.setLocation(300,200);
-        
+        // Closes this menu
         this.dispose();
-        f.setVisible(true);
     }//GEN-LAST:event_jBackAddUserBtnActionPerformed
 
     private void jConfirmPasswordTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jConfirmPasswordTxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jConfirmPasswordTxtActionPerformed
+
+    private void jExitAddUserBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jExitAddUserBtnActionPerformed
+        // Closes Program
+        Exit.Exit();
+    }//GEN-LAST:event_jExitAddUserBtnActionPerformed
 
     /**
      * @param args the command line arguments

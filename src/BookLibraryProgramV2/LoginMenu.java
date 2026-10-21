@@ -1,15 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package BookLibraryProgramV2;
 
-import javax.swing.JFrame;
 
-/**
- *
- * @author chops
- */
 public class LoginMenu extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(LoginMenu.class.getName());
@@ -61,6 +53,7 @@ public class LoginMenu extends javax.swing.JFrame {
 
         jLoginBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLoginBtn.setText("LOGIN");
+        jLoginBtn.addActionListener(this::jLoginBtnActionPerformed);
 
         jExitLoginBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jExitLoginBtn.setText("Exit");
@@ -69,6 +62,7 @@ public class LoginMenu extends javax.swing.JFrame {
                 jExitLoginBtnMouseClicked(evt);
             }
         });
+        jExitLoginBtn.addActionListener(this::jExitLoginBtnActionPerformed);
 
         jAddUserBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jAddUserBtn.setText("Add User");
@@ -138,27 +132,26 @@ public class LoginMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordTxtActionPerformed
 
     private void jExitLoginBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jExitLoginBtnMouseClicked
-        
-        // Closes the entire program
-        System.exit(0);
-
+        // Closes Program
+        Exit.Exit();
     }//GEN-LAST:event_jExitLoginBtnMouseClicked
 
     private void jAddUserBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAddUserBtnActionPerformed
         // Switches to the Add User Menu
-        AddUserMenu add = new AddUserMenu();
-        add.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        LoadFrame.AddUserMenu();
         
-        // Setting static screen size
-        add.setSize(1280, 750);
-        
-        // Centering frame
-        add.setLocation(300,200);
-        
-        add.show(true);
-               
+        // Closes this menu
         this.dispose();
     }//GEN-LAST:event_jAddUserBtnActionPerformed
+
+    private void jLoginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLoginBtnActionPerformed
+        
+    }//GEN-LAST:event_jLoginBtnActionPerformed
+
+    private void jExitLoginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jExitLoginBtnActionPerformed
+        // Closes Program
+        Exit.Exit();
+    }//GEN-LAST:event_jExitLoginBtnActionPerformed
 
     /**
      * @param args the command line arguments

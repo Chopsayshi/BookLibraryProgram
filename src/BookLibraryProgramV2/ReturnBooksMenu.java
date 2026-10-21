@@ -1,15 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package BookLibraryProgramV2;
 
-import javax.swing.JFrame;
-
-/**
- *
- * @author chops
- */
 public class ReturnBooksMenu extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ReturnBooksMenu.class.getName());
@@ -48,6 +39,7 @@ public class ReturnBooksMenu extends javax.swing.JFrame {
                 jExitReturnBookBtnMouseClicked(evt);
             }
         });
+        jExitReturnBookBtn.addActionListener(this::jExitReturnBookBtnActionPerformed);
 
         jReturnBooksMenuLbl.setFont(new java.awt.Font("Calibri", 0, 28)); // NOI18N
         jReturnBooksMenuLbl.setText("Return Books Menu");
@@ -121,30 +113,26 @@ public class ReturnBooksMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jExitReturnBookBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jExitReturnBookBtnMouseClicked
-
-        // Closes the entire program
-        System.exit(0);
+        // Closes Program
+        Exit.Exit();
     }//GEN-LAST:event_jExitReturnBookBtnMouseClicked
 
     private void jReturnBooksBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jReturnBooksBackBtnActionPerformed
         // Switches to the Admin Menu
-        BasicMenu basic = new BasicMenu();
-        basic.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        // Setting static screen size
-        basic.setSize(1280, 750);
-
-        // Centering frame
-        basic.setLocation(300,200);
-
-        basic.show(true);
-
+        LoadFrame.BasicMenu();
+        
+        // Closes this menu
         this.dispose();
     }//GEN-LAST:event_jReturnBooksBackBtnActionPerformed
 
     private void jReturnBooksBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jReturnBooksBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jReturnBooksBtnActionPerformed
+
+    private void jExitReturnBookBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jExitReturnBookBtnActionPerformed
+        // Closes Program
+        Exit.Exit();
+    }//GEN-LAST:event_jExitReturnBookBtnActionPerformed
 
     /**
      * @param args the command line arguments

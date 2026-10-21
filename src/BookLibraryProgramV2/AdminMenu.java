@@ -1,15 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package BookLibraryProgramV2;
 
-import javax.swing.JFrame;
-
-/**
- *
- * @author chops
- */
 public class AdminMenu extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AdminMenu.class.getName());
@@ -52,6 +43,7 @@ public class AdminMenu extends javax.swing.JFrame {
                 jExitAdminBtnMouseClicked(evt);
             }
         });
+        jExitAdminBtn.addActionListener(this::jExitAdminBtnActionPerformed);
 
         jAdminMenu1Lbl.setFont(new java.awt.Font("Calibri", 0, 28)); // NOI18N
         jAdminMenu1Lbl.setText("Admin Menu");
@@ -120,75 +112,48 @@ public class AdminMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jExitAdminBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jExitAdminBtnMouseClicked
-
-        // Closes the entire program
-        System.exit(0);
+        // Closes Program
+        Exit.Exit();
     }//GEN-LAST:event_jExitAdminBtnMouseClicked
 
     private void jLogoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLogoutBtnActionPerformed
         //TO DO: Clear saved user
         
         // Switches to LoginMenu
-        LoginMenu login = new LoginMenu();
-        login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        LoadFrame.LoginMenu();
         
-        // Setting static screen size
-        login.setSize(1280, 750);
-        
-        // Centering frame
-        login.setLocation(300,200);
-        
-        login.show(true);    
+        // Closes this menu
         this.dispose();
     }//GEN-LAST:event_jLogoutBtnActionPerformed
 
     private void jDeleteBooksMenuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDeleteBooksMenuBtnActionPerformed
         // Switches to the DeleteBooksMenu
-        DeleteBooksMenu delete = new DeleteBooksMenu();
-        delete.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        LoadFrame.DeleteBookMenu();
         
-        // Setting static screen size
-        delete.setSize(1280, 750);
-        
-        // Centering frame
-        delete.setLocation(300,200);
-        
-        delete.show(true);
-               
+        // Closes this menu
         this.dispose();
     }//GEN-LAST:event_jDeleteBooksMenuBtnActionPerformed
 
     private void jAddBookMenuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAddBookMenuBtnActionPerformed
         // Switches to the AddBookMenu
-        AddBookMenu add = new AddBookMenu();
-        add.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        LoadFrame.AddBookMenu();
         
-        // Setting static screen size
-        add.setSize(1280, 750);
-        
-        // Centering frame
-        add.setLocation(300,200);
-        
-        add.show(true);
-               
+        // Closes this menu
         this.dispose();
     }//GEN-LAST:event_jAddBookMenuBtnActionPerformed
 
     private void jUpdateBookBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUpdateBookBtnActionPerformed
         // Switches to the UpdateBookMenu
-        UpdateBookMenu update = new UpdateBookMenu();
-        update.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        LoadFrame.UpdateBookMenu();
         
-        // Setting static screen size
-        update.setSize(1280, 750);
-        
-        // Centering frame
-        update.setLocation(300,200);
-        
-        update.show(true);
-               
+        // Closes this menu
         this.dispose();
     }//GEN-LAST:event_jUpdateBookBtnActionPerformed
+
+    private void jExitAdminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jExitAdminBtnActionPerformed
+        // Closes Program
+        Exit.Exit();
+    }//GEN-LAST:event_jExitAdminBtnActionPerformed
 
     /**
      * @param args the command line arguments

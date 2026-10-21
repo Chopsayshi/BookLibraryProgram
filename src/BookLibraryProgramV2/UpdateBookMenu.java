@@ -1,22 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package BookLibraryProgramV2;
 
-import javax.swing.JFrame;
-
-/**
- *
- * @author chops
- */
 public class UpdateBookMenu extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(UpdateBookMenu.class.getName());
 
-    /**
-     * Creates new form UpdateBook
-     */
     public UpdateBookMenu() {
         initComponents();
     }
@@ -33,6 +21,9 @@ public class UpdateBookMenu extends javax.swing.JFrame {
         jExitUpdateBookBtn = new javax.swing.JButton();
         jUpdateBooksMenuLbl = new javax.swing.JLabel();
         jUpdateBooksBackBtn = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Library Program: Update Book Menu");
@@ -44,6 +35,7 @@ public class UpdateBookMenu extends javax.swing.JFrame {
                 jExitUpdateBookBtnMouseClicked(evt);
             }
         });
+        jExitUpdateBookBtn.addActionListener(this::jExitUpdateBookBtnActionPerformed);
 
         jUpdateBooksMenuLbl.setFont(new java.awt.Font("Calibri", 0, 28)); // NOI18N
         jUpdateBooksMenuLbl.setText("Update Books Menu");
@@ -51,26 +43,49 @@ public class UpdateBookMenu extends javax.swing.JFrame {
         jUpdateBooksBackBtn.setText("Back");
         jUpdateBooksBackBtn.addActionListener(this::jUpdateBooksBackBtnActionPerformed);
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel1.setText("Select Book:");
+
+        jLabel2.setText("Book Selected:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jExitUpdateBookBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jUpdateBooksBackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(525, Short.MAX_VALUE)
-                .addComponent(jUpdateBooksMenuLbl)
-                .addGap(522, 522, 522))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jExitUpdateBookBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jUpdateBooksBackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 359, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jUpdateBooksMenuLbl)
+                                .addGap(522, 522, 522))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel1))
+                                .addGap(28, 28, 28)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(455, 455, 455))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(jUpdateBooksMenuLbl)
-                .addGap(611, 611, 611)
+                .addGap(71, 71, 71)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addGap(463, 463, 463)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jExitUpdateBookBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
                     .addComponent(jUpdateBooksBackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -81,26 +96,22 @@ public class UpdateBookMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jExitUpdateBookBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jExitUpdateBookBtnMouseClicked
-
-        // Closes the entire program
-        System.exit(0);
+        // Closes Program
+        Exit.Exit();
     }//GEN-LAST:event_jExitUpdateBookBtnMouseClicked
 
     private void jUpdateBooksBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUpdateBooksBackBtnActionPerformed
         // Switches to the Admin Menu
-        AdminMenu admin = new AdminMenu();
-        admin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        // Setting static screen size
-        admin.setSize(1280, 750);
-
-        // Centering frame
-        admin.setLocation(300,200);
-
-        admin.show(true);
-
+        LoadFrame.AdminMenu();
+        
+        // Closes this menu
         this.dispose();
     }//GEN-LAST:event_jUpdateBooksBackBtnActionPerformed
+
+    private void jExitUpdateBookBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jExitUpdateBookBtnActionPerformed
+        // Closes Program
+        Exit.Exit();
+    }//GEN-LAST:event_jExitUpdateBookBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -128,7 +139,10 @@ public class UpdateBookMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JButton jExitUpdateBookBtn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton jUpdateBooksBackBtn;
     private javax.swing.JLabel jUpdateBooksMenuLbl;
     // End of variables declaration//GEN-END:variables

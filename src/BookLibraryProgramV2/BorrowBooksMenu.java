@@ -1,15 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package BookLibraryProgramV2;
 
-import javax.swing.JFrame;
 
-/**
- *
- * @author chops
- */
 public class BorrowBooksMenu extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(BorrowBooksMenu.class.getName());
@@ -120,29 +112,21 @@ public class BorrowBooksMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jExitBorrowBookBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jExitBorrowBookBtnMouseClicked
-
-        // Closes the entire program
-        System.exit(0);
+        // Closes Program
+        Exit.Exit();
     }//GEN-LAST:event_jExitBorrowBookBtnMouseClicked
 
     private void jBorrowBooksBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBorrowBooksBackBtnActionPerformed
         // Switches to the Admin Menu
-        BasicMenu basic = new BasicMenu();
-        basic.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        // Setting static screen size
-        basic.setSize(1280, 750);
-
-        // Centering frame
-        basic.setLocation(300,200);
-
-        basic.show(true);
-
+        LoadFrame.BasicMenu();
+        
+        // Closes this menu
         this.dispose();
     }//GEN-LAST:event_jBorrowBooksBackBtnActionPerformed
 
     private void jExitBorrowBookBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jExitBorrowBookBtnActionPerformed
-        // TODO add your handling code here:
+        // Closes Program
+        Exit.Exit();
     }//GEN-LAST:event_jExitBorrowBookBtnActionPerformed
 
     private void jBorrowBooksBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBorrowBooksBtnActionPerformed

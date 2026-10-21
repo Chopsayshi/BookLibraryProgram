@@ -1,15 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package BookLibraryProgramV2;
 
-import javax.swing.JFrame;
-
-/**
- *
- * @author chops
- */
 public class BasicMenu extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(BasicMenu.class.getName());
@@ -46,6 +37,7 @@ public class BasicMenu extends javax.swing.JFrame {
                 jExitBasicMenuBtnMouseClicked(evt);
             }
         });
+        jExitBasicMenuBtn.addActionListener(this::jExitBasicMenuBtnActionPerformed);
 
         jBasicMenuLbl.setFont(new java.awt.Font("Calibri", 0, 28)); // NOI18N
         jBasicMenuLbl.setText("Basic Menu");
@@ -111,59 +103,40 @@ public class BasicMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jExitBasicMenuBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jExitBasicMenuBtnMouseClicked
-
-        // Closes the entire program
-        System.exit(0);
+        // Closes Program
+        Exit.Exit();
     }//GEN-LAST:event_jExitBasicMenuBtnMouseClicked
 
     private void jLogoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLogoutBtnActionPerformed
         //TO DO: Clear saved user
 
         // Switches to LoginMenu
-        LoginMenu login = new LoginMenu();
-        login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        // Setting static screen size
-        login.setSize(1280, 750);
-
-        // Centering frame
-        login.setLocation(300,200);
-
-        login.show(true);
+        LoadFrame.LoginMenu();
+        
+        // Closes this menu
         this.dispose();
     }//GEN-LAST:event_jLogoutBtnActionPerformed
 
     private void jReturnBooksMenuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jReturnBooksMenuBtnActionPerformed
         // Switches to the ReturnBooksMenu
-        ReturnBooksMenu returns = new ReturnBooksMenu();
-        returns.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        LoadFrame.ReturnBooksMenu();
         
-        // Setting static screen size
-        returns.setSize(1280, 750);
-        
-        // Centering frame
-        returns.setLocation(300,200);
-        
-        returns.show(true);
-               
+        // Closes this menu
         this.dispose();
     }//GEN-LAST:event_jReturnBooksMenuBtnActionPerformed
 
     private void jBorrowBookMenuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBorrowBookMenuBtnActionPerformed
         // Switches to the BorrowBooksMenu
-        BorrowBooksMenu borrow = new BorrowBooksMenu();
-        borrow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        LoadFrame.BorrowBooksMenu();
         
-        // Setting static screen size
-        borrow.setSize(1280, 750);
-        
-        // Centering frame
-        borrow.setLocation(300,200);
-        
-        borrow.show(true);
-               
+        // Closes this menu
         this.dispose();
     }//GEN-LAST:event_jBorrowBookMenuBtnActionPerformed
+
+    private void jExitBasicMenuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jExitBasicMenuBtnActionPerformed
+        // Closes Program
+        Exit.Exit();
+    }//GEN-LAST:event_jExitBasicMenuBtnActionPerformed
 
     /**
      * @param args the command line arguments
