@@ -3,41 +3,124 @@ package BookLibraryProgramV2;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 
 public class LoadDatabases {
-        public static Connection conn;
-        public static String url;
-        public static String username = "pdc";
-        public static String password = "pdc";
-    
-    public static void LoadUserDB() throws SQLException 
-    {
-        // Double Check how to use embedded version
-        url = "jdbc:derby://localhost:1527/UserDB";
+        // Not needed for the embedded version
+//      public static String username = "pdc";
+//      public static String password = "pdc";
         
-        try {
-            conn = DriverManager.getConnection(url,username,password);
-            System.out.println(url+"Connected..");
-        }
-        catch (SQLException ex) {
-            System.err.println("SQLException: "+ex.getMessage());
+    public static String url;
+    Connection conn;
+    
+    public LoadDatabases() {
+        
+    }
+    
+    public static void main(String[] args) {
+        LoadDatabases dbManager = new LoadDatabases();
+    }
+    
+    public Connection getConnection() {
+        return this.conn;
+    }
+        
+    public void establishUserDBConnection() {
+        url = "jdbc:derby:UserDB; create=true";
+        
+        if (this.conn == null) {
+            try {
+                conn = DriverManager.getConnection(url);
+                // Debug Test
+                System.out.println(url+"Connected..");
+            } catch (SQLException ex) {
+                Logger.getLogger(LoadDatabases.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
     
-    public static void LoadBookDB() throws SQLException 
-    {
-        // Double Check how to use embedded version
-        url = "jdbc:derby://localhost:1527/BookDB";
+    public void establishBookDBConnection() {
+        url = "jdbc:derby:BookDB; create=true";
         
-        try {
-            conn = DriverManager.getConnection(url,username,password);
-            System.out.println(url+"Connected..");
-        }
-        catch (SQLException ex) {
-            System.err.println("SQLException: "+ex.getMessage());
+        if (this.conn == null) {
+            try {
+                conn = DriverManager.getConnection(url);
+                // Debug Test
+                System.out.println(url+"Connected..");
+            } catch (SQLException ex) {
+                Logger.getLogger(LoadDatabases.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
+    
+    public void closeConnections() {
+        if (conn != null) {
+            try {
+                conn.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(LoadDatabases.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    
+
+    
+//    public static void LoadUserDB() throws SQLException 
+//    {
+//        // Embedded Version
+//        url = "jdbc:derby:UserDB; create=true";
+//        
+//        try {
+//            conn = DriverManager.getConnection("jdbc:derby:UserDB; create=true");
+//            System.out.println(url+"Connected..");
+//        }
+//        catch (SQLException ex) {
+//            System.err.println("SQLException: "+ex.getMessage());
+//        }
+//        
+//        // Derby Network Server Version
+////        url = "jdbc:derby://localhost:1527/UserDB; create=true";
+////        
+////        try {
+////            conn = DriverManager.getConnection(url,username,password);
+////            System.out.println(url+"Connected..");
+////        }
+////        catch (SQLException ex) {
+////            System.err.println("SQLException: "+ex.getMessage());
+////        }
+//    }
+//    
+//    public static void LoadBookDB() throws SQLException 
+//    {
+//        
+//        // Embedded Version
+//        url = "jdbc:derby:BookDB; create=true";
+//        
+//        try {
+//            conn = DriverManager.getConnection("jdbc:derby:BookDB; create=true");
+//            System.out.println(url+"Connected..");
+//        }
+//        catch (SQLException ex) {
+//            System.err.println("SQLException: "+ex.getMessage());
+//        }
+//        
+//        // Derby Network Server Version
+////        url = "jdbc:derby://localhost:1527/BookDB; create=true";
+//        
+////        try {
+////            conn = DriverManager.getConnection(url,username,password);
+////            System.out.println(url+"Connected..");
+////        }
+////        catch (SQLException ex) {
+////            System.err.println("SQLException: "+ex.getMessage());
+////        }
+//    }
+    
 }
 

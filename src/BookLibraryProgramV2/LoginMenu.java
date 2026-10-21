@@ -66,6 +66,8 @@ public class LoginMenu extends javax.swing.JFrame {
 
         jAddUserBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jAddUserBtn.setText("Add User");
+        jAddUserBtn.setEnabled(false);
+        jAddUserBtn.setFocusable(false);
         jAddUserBtn.addActionListener(this::jAddUserBtnActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -179,8 +181,6 @@ public class LoginMenu extends javax.swing.JFrame {
             // No user is found
             // popup error
         }
-        
-
     }//GEN-LAST:event_jLoginBtnActionPerformed
 
     private void jExitLoginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jExitLoginBtnActionPerformed

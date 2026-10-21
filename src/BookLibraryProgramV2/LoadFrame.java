@@ -25,6 +25,9 @@ public class LoadFrame {
             
             // Displays menu
             f.setVisible(true);
+            
+            LoadDatabases db1 = new LoadDatabases();
+            db1.establishUserDBConnection();
         }
         
         public static void AddUserMenu() {
@@ -39,6 +42,8 @@ public class LoadFrame {
             
             // Displays menu
             addU.setVisible(true);
+            LoadDatabases db2 = new LoadDatabases();
+            db2.establishUserDBConnection();
         }
         
         public static void AdminMenu() {
@@ -53,6 +58,8 @@ public class LoadFrame {
 
             // Displays menu
             admin.setVisible(true);
+            LoadDatabases db3 = new LoadDatabases();
+            db3.closeConnections();
         }
 
         public static void AddBookMenu() {
@@ -67,6 +74,8 @@ public class LoadFrame {
 
             // Displays menu
             addB.setVisible(true);
+            LoadDatabases db4 = new LoadDatabases();
+            db4.establishBookDBConnection();
         }
         
         public static void UpdateBookMenu() {
@@ -81,6 +90,8 @@ public class LoadFrame {
             
             // Displays menu
             update.setVisible(true);
+            LoadDatabases db5 = new LoadDatabases();
+            db5.establishBookDBConnection();
         }
         
         public static void DeleteBookMenu() {
@@ -95,6 +106,8 @@ public class LoadFrame {
             
             // Displays menu
             delete.setVisible(true);
+            LoadDatabases db6 = new LoadDatabases();
+            db6.establishBookDBConnection();
         }
         
         public static void BasicMenu() {
@@ -109,6 +122,8 @@ public class LoadFrame {
             
             // Displays menu
             basic.setVisible(true);
+            LoadDatabases db7 = new LoadDatabases();
+            db7.closeConnections();
         }
         
         public static void BorrowBooksMenu() {
@@ -123,6 +138,8 @@ public class LoadFrame {
             
             // Displays menu
             borrow.setVisible(true);
+            LoadDatabases db8 = new LoadDatabases();
+            db8.establishBookDBConnection();
         }
         
         public static void ReturnBooksMenu() {
@@ -137,5 +154,7 @@ public class LoadFrame {
             
             // Displays menu
             returns.setVisible(true);
+            LoadDatabases db9 = new LoadDatabases();
+            db9.establishBookDBConnection();
         }
 }

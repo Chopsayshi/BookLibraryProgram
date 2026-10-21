@@ -124,15 +124,31 @@ public class AddBookMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jSetTitleTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSetTitleTxtActionPerformed
-        // TODO add your handling code here:
+        // Debug Test
+        String title = jSetTitleTxt.getText();
+        
+        System.out.println("You Entered: "+ title);
     }//GEN-LAST:event_jSetTitleTxtActionPerformed
 
     private void jAddBookBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAddBookBtnActionPerformed
-        // TODO add your handling code here:
+        // Debug Test
+        String title = jSetTitleTxt.getText();
+        String author = jSetAuthorTxt.getText();
+        
+        System.out.println("You Entered: "+ title + author);
+        
+        // Check if text was entered in both fields
+        // Check if the title already exsists, if it does check if the book has the same author
+        // If true then false false send out popup: ("Are you sure you would like to add the book: "+ title+ " " + author);
+        // if yes add to database
+        // if no restart
     }//GEN-LAST:event_jAddBookBtnActionPerformed
 
     private void jSetAuthorTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSetAuthorTxtActionPerformed
-        // TODO add your handling code here:
+        // Debug Test
+        String author = jSetAuthorTxt.getText();
+        
+        System.out.println("You Entered: "+ author);
     }//GEN-LAST:event_jSetAuthorTxtActionPerformed
 
     private void jExitAddBookBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jExitAddBookBtnMouseClicked

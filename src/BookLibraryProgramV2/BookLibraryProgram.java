@@ -1,6 +1,8 @@
 package BookLibraryProgramV2;
 
+
 import java.sql.SQLException;
+
 
 public class BookLibraryProgram {
 
@@ -8,11 +10,6 @@ public class BookLibraryProgram {
         
         // Loads Initial Menu: Login Menu
         LoadFrame.LoginMenu();
-      
-        // Starts database connections
-        LoadDatabases.LoadUserDB();
-        LoadDatabases.LoadBookDB();
-        
         
     }
 }
