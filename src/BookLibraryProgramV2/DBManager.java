@@ -10,7 +10,7 @@ import java.sql.Statement;
 public final class DBManager {
     public static final String USERNAME = "pdc";
     public static final String PASSWORD = "pdc";
-    public final String URL = "jdbc:derby:LibraryDB; create=true";
+    public final String URL = "jdbc:derby:LibraryDB; create=true "; //create=true
     Connection conn;
     
     public DBManager() {
