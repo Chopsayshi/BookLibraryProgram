@@ -227,7 +227,7 @@ public class DeleteBookMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jDisplaySelected;
     private javax.swing.JButton jExitBtn;
     private javax.swing.JButton jExitDeleteBookBtn;
-    private javax.swing.JList<String> jList1;
+    public javax.swing.JList<String> jList1;
     private javax.swing.JButton jLogoutBtn;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel jSelectBooksLbl;

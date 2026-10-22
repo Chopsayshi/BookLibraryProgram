@@ -54,8 +54,6 @@ public class Book {
     private boolean matchTitle = false;
     private boolean bookMatch = false;
     
-    
-    
     public void bookExsists() throws SQLException  {
         DBManager db = new DBManager();
         
@@ -80,7 +78,6 @@ public class Book {
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());        
         }
-       
     }
     
      public boolean matchTitle() {
@@ -90,25 +87,4 @@ public class Book {
     public boolean matchBook() {
         return this.bookMatch;
     }
-    
-    public void addBook() throws SQLException {
-        DBManager db = new DBManager();
-        GetBooks gb = new GetBooks();
-        
-        String sql = "INSERT INTO PDC.BOOK (bookid,title, author, available) VALUES (?,?, ?, ?)";
-        try (PreparedStatement prep = db.getConnection().prepareStatement(sql)) {
-            
-            prep.setInt(1, gb.countBooks() + 2);
-            prep.setString(2, this.title);
-            prep.setString(3, this.author);
-            prep.setBoolean(4, true);
-
-            prep.executeUpdate();
-            System.out.println("Book Added");
- 
-        } catch (SQLException ex) {
-            System.err.println(ex.getMessage());        
-        } 
-    }
-    
 }

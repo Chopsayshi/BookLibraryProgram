@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-public class GetBooks {
+public class ListBooks {
     DBManager db = new DBManager();
     
     // Adjusted 'getAllCars' lab demo
@@ -30,29 +30,21 @@ public class GetBooks {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(GetBooks.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ListBooks.class.getName()).log(Level.SEVERE, null, ex);
         }
         return bookList;
     }
     
-    public int countBooks() {
-        int count = 0;
-        GetBooks gb = new GetBooks();
-        List<Book> bookList = gb.getAllBooks();
-        for (Book b : bookList) {
-            count++;
-        }
-        return count;
-    }
+    
     
     public static void main(String args[]) {
-        GetBooks gb = new GetBooks();
+        ListBooks gb = new ListBooks();
         List<Book> bookList = gb.getAllBooks();
         for (Book b : bookList) {
             System.out.println(b.toString());
         }
-        gb.db.closeConnections();
         
-        System.out.println(gb.countBooks());
+        System.out.println("Counted Books: "+CountBooks.countBooks());
+        gb.db.closeConnections();
     }
 }

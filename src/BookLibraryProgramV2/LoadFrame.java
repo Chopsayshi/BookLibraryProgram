@@ -113,7 +113,7 @@ public class LoadFrame {
         }
         
         public static void BorrowBooksMenu() {
-            BorrowBooksMenu borrow = new BorrowBooksMenu();
+            BorrowBookMenu borrow = new BorrowBookMenu();
             borrow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
             // Setting screen size
@@ -127,7 +127,7 @@ public class LoadFrame {
         }
         
         public static void ReturnBooksMenu() {
-            ReturnBooksMenu returns = new ReturnBooksMenu();
+            ReturnBookMenu returns = new ReturnBookMenu();
             returns.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
             // Setting screen size

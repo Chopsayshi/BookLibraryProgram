@@ -175,7 +175,7 @@ public class AddBookMenu extends javax.swing.JFrame {
                        "Are you sure you would like to add "+ title + " "+author+"?");
                 switch (choice) {
                     // User selects yes
-                    case 0 -> b.addBook();
+                    case 0 -> AddBook.addBook(title,author);
                     // User selects no
                     case 1 -> javax.swing.JOptionPane.showMessageDialog(this, "Info: "
                             +b.getTitle() + " "+b.getAuthor()+" was not added");

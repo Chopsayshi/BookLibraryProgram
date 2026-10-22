@@ -1,14 +1,15 @@
 
 package BookLibraryProgramV2;
 
-public class ReturnBooksMenu extends javax.swing.JFrame {
+
+public class BorrowBookMenu extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ReturnBooksMenu.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(BorrowBookMenu.class.getName());
 
     /**
-     * Creates new form ReturnBook
+     * Creates new form BorrowBook
      */
-    public ReturnBooksMenu() {
+    public BorrowBookMenu() {
         initComponents();
     }
 
@@ -21,32 +22,33 @@ public class ReturnBooksMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jExitReturnBookBtn = new javax.swing.JButton();
-        jReturnBooksMenuLbl = new javax.swing.JLabel();
-        jReturnBooksBackBtn = new javax.swing.JButton();
+        jExitBorrowBookBtn = new javax.swing.JButton();
+        jBorrowBookMenuLbl = new javax.swing.JLabel();
+        jBorrowBooksBackBtn = new javax.swing.JButton();
         jSelectBooksLbl = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
-        jReturnBooksBtn = new javax.swing.JButton();
+        jBorrowBooksBtn = new javax.swing.JButton();
         jLogoutBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Library Program: Return Book Menu");
+        setTitle("Library Program: Borrow Book Menu");
+        setSize(new java.awt.Dimension(1280, 720));
 
-        jExitReturnBookBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jExitReturnBookBtn.setText("Exit");
-        jExitReturnBookBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        jExitBorrowBookBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jExitBorrowBookBtn.setText("Exit");
+        jExitBorrowBookBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jExitReturnBookBtnMouseClicked(evt);
+                jExitBorrowBookBtnMouseClicked(evt);
             }
         });
-        jExitReturnBookBtn.addActionListener(this::jExitReturnBookBtnActionPerformed);
+        jExitBorrowBookBtn.addActionListener(this::jExitBorrowBookBtnActionPerformed);
 
-        jReturnBooksMenuLbl.setFont(new java.awt.Font("Calibri", 0, 28)); // NOI18N
-        jReturnBooksMenuLbl.setText("Return Books Menu");
+        jBorrowBookMenuLbl.setFont(new java.awt.Font("Calibri", 0, 28)); // NOI18N
+        jBorrowBookMenuLbl.setText("Borrow Book Menu");
 
-        jReturnBooksBackBtn.setText("Back");
-        jReturnBooksBackBtn.addActionListener(this::jReturnBooksBackBtnActionPerformed);
+        jBorrowBooksBackBtn.setText("Back");
+        jBorrowBooksBackBtn.addActionListener(this::jBorrowBooksBackBtnActionPerformed);
 
         jSelectBooksLbl.setFont(new java.awt.Font("Calibri", 0, 20)); // NOI18N
         jSelectBooksLbl.setText("Select Books:");
@@ -58,9 +60,9 @@ public class ReturnBooksMenu extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jList1);
 
-        jReturnBooksBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jReturnBooksBtn.setText("Return Books");
-        jReturnBooksBtn.addActionListener(this::jReturnBooksBtnActionPerformed);
+        jBorrowBooksBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jBorrowBooksBtn.setText("Borrow Books");
+        jBorrowBooksBtn.addActionListener(this::jBorrowBooksBtnActionPerformed);
 
         jLogoutBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLogoutBtn.setText("Logout");
@@ -70,78 +72,74 @@ public class ReturnBooksMenu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(483, 483, 483)
-                .addComponent(jReturnBooksMenuLbl)
-                .addContainerGap(570, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jExitReturnBookBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(457, 457, 457)
-                .addComponent(jLogoutBtn)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jExitBorrowBookBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(462, 462, 462)
+                .addComponent(jLogoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jReturnBooksBackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
+                .addComponent(jBorrowBooksBackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(449, 449, 449)
+                .addComponent(jBorrowBookMenuLbl)
+                .addContainerGap(608, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(295, 295, 295)
+                    .addGap(260, 260, 260)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jReturnBooksBtn, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jBorrowBooksBtn, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSelectBooksLbl)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 609, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addContainerGap(376, Short.MAX_VALUE)))
+                    .addContainerGap(411, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jReturnBooksMenuLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 615, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jReturnBooksBackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jExitReturnBookBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLogoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())))
+                .addGap(20, 20, 20)
+                .addComponent(jBorrowBookMenuLbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 609, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBorrowBooksBackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jExitBorrowBookBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLogoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(120, 120, 120)
+                    .addGap(114, 114, 114)
                     .addComponent(jSelectBooksLbl)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jReturnBooksBtn)
-                    .addContainerGap(157, Short.MAX_VALUE)))
+                    .addComponent(jBorrowBooksBtn)
+                    .addContainerGap(163, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jExitReturnBookBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jExitReturnBookBtnMouseClicked
+    private void jExitBorrowBookBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jExitBorrowBookBtnMouseClicked
         // Closes Program
         Exit.Exit();
-    }//GEN-LAST:event_jExitReturnBookBtnMouseClicked
+    }//GEN-LAST:event_jExitBorrowBookBtnMouseClicked
 
-    private void jReturnBooksBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jReturnBooksBackBtnActionPerformed
+    private void jBorrowBooksBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBorrowBooksBackBtnActionPerformed
         // Switches to the Admin Menu
         LoadFrame.BasicMenu();
         
         // Closes this menu
         this.dispose();
-    }//GEN-LAST:event_jReturnBooksBackBtnActionPerformed
+    }//GEN-LAST:event_jBorrowBooksBackBtnActionPerformed
 
-    private void jReturnBooksBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jReturnBooksBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jReturnBooksBtnActionPerformed
-
-    private void jExitReturnBookBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jExitReturnBookBtnActionPerformed
+    private void jExitBorrowBookBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jExitBorrowBookBtnActionPerformed
         // Closes Program
         Exit.Exit();
-    }//GEN-LAST:event_jExitReturnBookBtnActionPerformed
+    }//GEN-LAST:event_jExitBorrowBookBtnActionPerformed
+
+    private void jBorrowBooksBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBorrowBooksBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBorrowBooksBtnActionPerformed
 
     private void jLogoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLogoutBtnActionPerformed
         // Switches to LoginMenu
@@ -173,16 +171,16 @@ public class ReturnBooksMenu extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new ReturnBooksMenu().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new BorrowBookMenu().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jExitReturnBookBtn;
+    private javax.swing.JLabel jBorrowBookMenuLbl;
+    private javax.swing.JButton jBorrowBooksBackBtn;
+    private javax.swing.JButton jBorrowBooksBtn;
+    private javax.swing.JButton jExitBorrowBookBtn;
     private javax.swing.JList<String> jList1;
     private javax.swing.JButton jLogoutBtn;
-    private javax.swing.JButton jReturnBooksBackBtn;
-    private javax.swing.JButton jReturnBooksBtn;
-    private javax.swing.JLabel jReturnBooksMenuLbl;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel jSelectBooksLbl;
     // End of variables declaration//GEN-END:variables
