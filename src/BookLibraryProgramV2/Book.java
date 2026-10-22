@@ -72,18 +72,24 @@ public class Book {
         return this.bookMatch;
     }
     
-    public void addBook() {
-        DBManager db = new DBManager();
-        String sql = "";
+    public void addBook() throws SQLException {
+        DBManager db = new DBManager();     
         
+        String sql = "INSERT INTO PDC.BOOK (title, author, available) VALUES (?, ?, ?)";
         try (PreparedStatement prep = db.getConnection().prepareStatement(sql)) {
             
-            System.out.print(db);
- 
+            prep.setString(1, this.title);
+            prep.setString(2, this.author);
+            prep.setBoolean(3, true);
+
+            prep.executeUpdate();
+            
+            db.getConnection().commit();
+            System.out.println("Book Added and Comitted");
  
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());        
-        }
+        } 
     }
     
     

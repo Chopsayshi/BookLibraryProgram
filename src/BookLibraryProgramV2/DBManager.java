@@ -40,6 +40,7 @@ public final class DBManager {
         if (conn != null) {
             try {
                 conn.close();
+                System.out.println("db disconnected");
             } catch (SQLException ex) {
                 System.err.println(ex.getMessage());
             }
