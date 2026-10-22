@@ -164,15 +164,15 @@ public class AddBookMenu extends javax.swing.JFrame {
                        "Are you sure you would like to add "+ title + " "+author+"?");
                 switch (choice) {
                     // User selects yes
-                    case 0 -> b.addBook();
+                    case 0 -> System.out.println("would add book"); // b.addBook();
                     // User selects no
                     case 1 -> javax.swing.JOptionPane.showMessageDialog(this, "Info: "
                             +b.getTitle() + " "+b.getAuthor()+" was not added");
                 }
-              if (choice == 0) {
+              if (choice == 0) { 
                 javax.swing.JOptionPane.showMessageDialog(this, "Info: "
                             +b.getTitle() + " "+b.getAuthor()+" was added");
-            }
+                }
             }
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());        
