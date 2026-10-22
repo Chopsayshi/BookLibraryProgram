@@ -57,7 +57,7 @@ public final class DBManager {
         try {
             statement = connection.createStatement();
             resultSet = statement.executeQuery(sql);
-
+            
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }

@@ -150,7 +150,7 @@ public class AddBookMenu extends javax.swing.JFrame {
     private void jAddBookBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAddBookBtnActionPerformed
         // Debug Test
         DBManager db = new DBManager();
-        
+        db.closeConnections();
         
         String title = jSetTitleTxt.getText();
         String author = jSetAuthorTxt.getText();

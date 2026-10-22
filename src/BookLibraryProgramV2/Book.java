@@ -6,18 +6,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Book {
-    public String title;
-    private String author;
     private int bookid;
-    private boolean available = true;
-    private boolean matchTitle = false;
-    private boolean bookMatch = false;
+    private String title;
+    private String author;
+    private boolean available;
     
     public Book(String title, String author) {
         this.title = title;
         this.author = author;
+        this.available = true;
     }
     
+    // Getters
     public String getTitle() {
         return this.title;
     }
@@ -26,10 +26,11 @@ public class Book {
         return this.author;
     }
     
-    public boolean isAvailable() {
+    public boolean getAvailable() {
         return this.available;
     }
-
+    
+    // Setters
     public void setBorrow() {
         this.available = false;
     }
@@ -38,10 +39,22 @@ public class Book {
         this.available = true;
     }
     
+    public void setBookID(int num) {
+        this.bookid += num ;
+    }
+    
+    // toString
     @Override
     public String toString(){
         return "Book ID:"+this.bookid+" Title: "+ this.title + " Author: "+this.author+" Avaialbility: "+this.available;
     }
+    
+    // 
+
+    private boolean matchTitle = false;
+    private boolean bookMatch = false;
+    
+    
     
     public void bookExsists() throws SQLException  {
         DBManager db = new DBManager();
@@ -79,21 +92,19 @@ public class Book {
     }
     
     public void addBook() throws SQLException {
-        DBManager db = new DBManager(); 
+        DBManager db = new DBManager();
         GetBooks gb = new GetBooks();
         
         String sql = "INSERT INTO PDC.BOOK (bookid,title, author, available) VALUES (?,?, ?, ?)";
         try (PreparedStatement prep = db.getConnection().prepareStatement(sql)) {
             
-            prep.setInt(1, gb.countBooks() + 1);
+            prep.setInt(1, gb.countBooks() + 2);
             prep.setString(2, this.title);
             prep.setString(3, this.author);
             prep.setBoolean(4, true);
 
             prep.executeUpdate();
-            
-            db.getConnection().commit();
-            System.out.println("Book Added and Comitted");
+            System.out.println("Book Added");
  
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());        

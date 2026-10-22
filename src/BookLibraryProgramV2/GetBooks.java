@@ -32,7 +32,6 @@ public class GetBooks {
         } catch (SQLException ex) {
             Logger.getLogger(GetBooks.class.getName()).log(Level.SEVERE, null, ex);
         }
-
         return bookList;
     }
     
