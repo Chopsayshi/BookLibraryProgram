@@ -22,6 +22,7 @@ public class AddUserMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         jExitBtn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jBackAddUserBtn = new javax.swing.JButton();
         jExitAddUserBtn = new javax.swing.JButton();
         jUsernameLbl = new javax.swing.JLabel();
@@ -32,6 +33,9 @@ public class AddUserMenu extends javax.swing.JFrame {
         jCreateUserBtn = new javax.swing.JButton();
         PasswordLbl1 = new javax.swing.JLabel();
         jConfirmPasswordTxt = new javax.swing.JPasswordField();
+        jInstructionsLbl = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         jExitBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jExitBtn.setText("Exit");
@@ -40,6 +44,10 @@ public class AddUserMenu extends javax.swing.JFrame {
                 jExitBtnMouseClicked(evt);
             }
         });
+
+        jLabel1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel1.setText("This feature is disabled as it further increased project complexity");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Library Program: Add User Menu");
@@ -82,6 +90,17 @@ public class AddUserMenu extends javax.swing.JFrame {
         jConfirmPasswordTxt.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jConfirmPasswordTxt.addActionListener(this::jConfirmPasswordTxtActionPerformed);
 
+        jInstructionsLbl.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jInstructionsLbl.setText("Please set a new username and password:");
+
+        jLabel2.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel2.setText("This feature is disabled as it further increased project complexity");
+
+        jLabel3.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel3.setText("E.g Borrow & Return Books would require further checks to log loans for each user");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -99,9 +118,6 @@ public class AddUserMenu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(573, 573, 573)
-                        .addComponent(jAddUserMenuLbl))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(433, 433, 433)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
@@ -116,15 +132,30 @@ public class AddUserMenu extends javax.swing.JFrame {
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jUsernameLbl)
                                     .addGap(26, 26, 26)
-                                    .addComponent(jSetUsernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(jSetUsernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jInstructionsLbl, javax.swing.GroupLayout.Alignment.TRAILING))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(193, 193, 193)
+                                .addComponent(jAddUserMenuLbl)))))
                 .addContainerGap(478, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jAddUserMenuLbl)
-                .addGap(195, 195, 195)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jAddUserMenuLbl)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addGap(130, 130, 130)
+                .addComponent(jInstructionsLbl)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jUsernameLbl)
                     .addComponent(jSetUsernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -217,6 +248,10 @@ public class AddUserMenu extends javax.swing.JFrame {
     private javax.swing.JButton jCreateUserBtn;
     private javax.swing.JButton jExitAddUserBtn;
     private javax.swing.JButton jExitBtn;
+    private javax.swing.JLabel jInstructionsLbl;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPasswordField jSetPasswordTxt;
     private javax.swing.JTextField jSetUsernameTxt;
     private javax.swing.JLabel jUsernameLbl;

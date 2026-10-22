@@ -2,16 +2,19 @@
 package BookLibraryProgramV2;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Book {
-    private String title;
+    public String title;
     private String author;
     private boolean available = true;
+    private boolean matchTitle = false;
+    private boolean bookMatch = false;
     
     public Book(String title, String author) {
         this.title = title;
-        this.title = author;
+        this.author = author;
     }
     
     public String getTitle() {
@@ -33,31 +36,68 @@ public class Book {
     public void setReturn() {
         this.available = true;
     }
-
-    public void addBook() throws SQLException {
-        DBManager db = new DBManager();
-        BookLibrary bl = new BookLibrary();
+    
+    public void bookExsists() throws SQLException  {
+        DBManager newdb = new DBManager();
         
+        String sql = "SELECT author FROM BOOK where title = ?";
         
-        try  {
-             String sql = "INSERT INTO BOOK (bookid, title, author, available) VALUES (?,?,?,?)";
-        
-            try(PreparedStatement prep = db.getConnection().prepareStatement(sql)) {
-                prep.setInt(1,bl.count());
-                prep.setString(2,getTitle());
-                prep.setString(3,getAuthor());
-                prep.setBoolean(4,isAvailable());
+        try (PreparedStatement prep = newdb.getConnection().prepareStatement(sql)) {
+             prep.setString(1, this.title);
+             ResultSet rs = prep.executeQuery();
+            
+            if(rs.next()) {
+                // A book matches the entered title
+                this.matchTitle = true;
+                String dbAuthor = rs.getString("author");
                 
-                int fields = prep.executeUpdate();
-                if (fields > 0) {
-                    System.out.println("Book Added!");
-                }
+                if (dbAuthor.equals(this.author)) {
+                        this.bookMatch = true;
+//                        System.out.println("THIS BOOK EXSISITS");
+                }    
                 
             }
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());        
         }
        
+        
+    }
+    
+     public boolean matchTitle() {
+        return this.matchTitle;
+    }
+    
+    public boolean matchBook() {
+        return this.bookMatch;
+    }
+    
+    public void addBook() {
+        DBManager db = new DBManager();
+        String sql = "";
+        
+        try (PreparedStatement prep = db.getConnection().prepareStatement(sql)) {
+            
+            System.out.print(db);
+ 
+ 
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());        
+        }
+    }
+    
+    
+    // For delete and borrow book menus
+    public void displayAvailableBooks() {
+        
+    }
+    
+    // For return menu
+    public void displayUnvailableBooks() {
+        
+    }
+    
+    public void deleteBook() {
         
     }
 }

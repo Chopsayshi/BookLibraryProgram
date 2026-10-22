@@ -25,13 +25,15 @@ public class LoginMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         jLoginMenuLbl = new javax.swing.JLabel();
-        jUsernameLbl = new javax.swing.JLabel();
+        jInstructionsLbl = new javax.swing.JLabel();
         jUsernameTxt = new javax.swing.JTextField();
         PasswordLbl = new javax.swing.JLabel();
         jPasswordTxt = new javax.swing.JPasswordField();
         jLoginBtn = new javax.swing.JButton();
         jExitLoginBtn = new javax.swing.JButton();
         jAddUserBtn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jUsernameLbl1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Library Program: Login Menu");
@@ -41,8 +43,8 @@ public class LoginMenu extends javax.swing.JFrame {
         jLoginMenuLbl.setFont(new java.awt.Font("Calibri", 0, 28)); // NOI18N
         jLoginMenuLbl.setText("Login Menu");
 
-        jUsernameLbl.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jUsernameLbl.setText("Username:");
+        jInstructionsLbl.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jInstructionsLbl.setText("Please enter a vaild username and password:");
 
         jUsernameTxt.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jUsernameTxt.addActionListener(this::jUsernameTxtActionPerformed);
@@ -72,14 +74,23 @@ public class LoginMenu extends javax.swing.JFrame {
         jAddUserBtn.setFocusable(false);
         jAddUserBtn.addActionListener(this::jAddUserBtnActionPerformed);
 
+        jLabel1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel1.setText("This feature is disabled as it further increased project complexity");
+
+        jUsernameLbl1.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jUsernameLbl1.setText("Username:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jAddUserBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1017, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jExitLoginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
             .addGroup(layout.createSequentialGroup()
@@ -90,38 +101,49 @@ public class LoginMenu extends javax.swing.JFrame {
                         .addComponent(jLoginMenuLbl))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jUsernameLbl)
-                                .addComponent(PasswordLbl))
-                            .addGap(18, 18, 18)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(PasswordLbl)
+                                    .addGap(23, 23, 23))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jUsernameLbl1)
+                                    .addGap(18, 18, 18)))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jPasswordTxt)
                                 .addComponent(jUsernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLoginBtn)
-                            .addGap(59, 59, 59))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGap(59, 59, 59)))
+                    .addComponent(jInstructionsLbl))
+                .addContainerGap(475, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLoginMenuLbl)
-                .addGap(249, 249, 249)
+                .addGap(208, 208, 208)
+                .addComponent(jInstructionsLbl)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jUsernameLbl)
-                    .addComponent(jUsernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jUsernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jUsernameLbl1))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jPasswordTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PasswordLbl))
                 .addGap(18, 18, 18)
                 .addComponent(jLoginBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 272, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jAddUserBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jExitLoginBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
-                .addGap(24, 24, 24))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 270, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jExitLoginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
+                            .addComponent(jAddUserBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel1))
+                        .addGap(14, 14, 14))))
         );
 
         pack();
@@ -129,17 +151,17 @@ public class LoginMenu extends javax.swing.JFrame {
 
     private void jUsernameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUsernameTxtActionPerformed
         // Debug Test
-        String username = jUsernameTxt.getText();
-        
-        System.out.println("You Entered: "+ username);
+//        String username = jUsernameTxt.getText();
+//        
+//        System.out.println("You Entered: "+ username);
     }//GEN-LAST:event_jUsernameTxtActionPerformed
 
     private void jPasswordTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordTxtActionPerformed
         // Debug Test
-        char[] passwordChar = jPasswordTxt.getPassword();
-        String password = new String(passwordChar);
-        
-        System.out.println("Pass Entered: "+ password);
+//        char[] passwordChar = jPasswordTxt.getPassword();
+//        String password = new String(passwordChar);
+//        
+//        System.out.println("Pass Entered: "+ password);
     }//GEN-LAST:event_jPasswordTxtActionPerformed
 
     private void jExitLoginBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jExitLoginBtnMouseClicked
@@ -161,11 +183,9 @@ public class LoginMenu extends javax.swing.JFrame {
         char[] passwordChar = jPasswordTxt.getPassword();
         String password = new String(passwordChar);
         
-        System.out.println("You Entered: "+ username +" Password: " + password);
+//        System.out.println("You Entered: "+ username +" Password: " + password);
         
         Login log = new Login(username,password);
-        
-        System.out.println(log.getUser()+ " with "+ log.getPass());
         
         try {
             log.checkUserDetails();
@@ -187,12 +207,12 @@ public class LoginMenu extends javax.swing.JFrame {
             }
             else {
                 // Password does not match the users password
-                javax.swing.JOptionPane.showMessageDialog(this, "Error: Incorrect password or username, try again");
+                javax.swing.JOptionPane.showMessageDialog(this, "Invalid input: Incorrect password or username, try again");
             }
         }
         else {
             // No user is found
-                javax.swing.JOptionPane.showMessageDialog(this, "Error: User not found, try again");
+                javax.swing.JOptionPane.showMessageDialog(this, "Invalid input: User not found, try again");
         }
             
         } catch (SQLException ex) {
@@ -235,10 +255,12 @@ public class LoginMenu extends javax.swing.JFrame {
     private javax.swing.JLabel PasswordLbl;
     private javax.swing.JButton jAddUserBtn;
     private javax.swing.JButton jExitLoginBtn;
+    private javax.swing.JLabel jInstructionsLbl;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton jLoginBtn;
     private javax.swing.JLabel jLoginMenuLbl;
     private javax.swing.JPasswordField jPasswordTxt;
-    private javax.swing.JLabel jUsernameLbl;
+    private javax.swing.JLabel jUsernameLbl1;
     private javax.swing.JTextField jUsernameTxt;
     // End of variables declaration//GEN-END:variables
 }

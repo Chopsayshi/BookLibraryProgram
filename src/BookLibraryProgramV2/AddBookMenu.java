@@ -31,6 +31,7 @@ public class AddBookMenu extends javax.swing.JFrame {
         jAddBookMenuLbl = new javax.swing.JLabel();
         jExitAddBookBtn = new javax.swing.JButton();
         jAddBookBackBtn = new javax.swing.JButton();
+        jInstructionsLbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Library Program: Add Book Menu");
@@ -68,6 +69,9 @@ public class AddBookMenu extends javax.swing.JFrame {
         jAddBookBackBtn.setText("Back");
         jAddBookBackBtn.addActionListener(this::jAddBookBackBtnActionPerformed);
 
+        jInstructionsLbl.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jInstructionsLbl.setText("Please enter both a title and an author:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -91,8 +95,9 @@ public class AddBookMenu extends javax.swing.JFrame {
                                     .addComponent(jSetTitleTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(143, 143, 143)
-                                .addComponent(jAddBookBtn)))))
-                .addContainerGap(547, Short.MAX_VALUE))
+                                .addComponent(jAddBookBtn))
+                            .addComponent(jInstructionsLbl))))
+                .addContainerGap(520, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jExitAddBookBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -105,7 +110,9 @@ public class AddBookMenu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jAddBookMenuLbl)
-                .addGap(219, 219, 219)
+                .addGap(178, 178, 178)
+                .addComponent(jInstructionsLbl)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jSetTitleLbl)
                     .addComponent(jSetTitleTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -127,9 +134,9 @@ public class AddBookMenu extends javax.swing.JFrame {
 
     private void jSetTitleTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSetTitleTxtActionPerformed
         // Debug Test
-        String title = jSetTitleTxt.getText();
-        
-        System.out.println("You Entered: "+ title);
+//        String title = jSetTitleTxt.getText();
+//        
+//        System.out.println("You Entered: "+ title);
     }//GEN-LAST:event_jSetTitleTxtActionPerformed
 
     private void jAddBookBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAddBookBtnActionPerformed
@@ -137,22 +144,51 @@ public class AddBookMenu extends javax.swing.JFrame {
         String title = jSetTitleTxt.getText();
         String author = jSetAuthorTxt.getText();
         
-        System.out.println("You Entered: "+ title + author);
+//        System.out.println("You Entered: "+ title + author);
         
         Book b = new Book(title,author);
-        try {
-            b.addBook();
-            System.out.println("The book"+b.getTitle()+b.getAuthor()+" was added");
-        } catch (SQLException ex) {
-            System.getLogger(AddBookMenu.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        System.out.println(b.getTitle() + " "+b.getAuthor());
+        if (title.isEmpty() || author.isEmpty() ){
+            javax.swing.JOptionPane.showMessageDialog(this, "Missing Inputs: "
+                    + "Please enter a title and an author");
         }
+        else {
+            try {
+            b.bookExsists();
+            if (b.matchBook()) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Error: Cannot "
+                        + "add book as this book already exsists");
+            }
+            else {
+               int choice = javax.swing.JOptionPane.showConfirmDialog(this, 
+                       "Are you sure you would like to add "+ title + " "+author+"?");
+                switch (choice) {
+                    // User selects yes
+                    case 0 -> b.addBook();
+                    // User selects no
+                    case 1 -> javax.swing.JOptionPane.showMessageDialog(this, "Info: "
+                            +b.getTitle() + " "+b.getAuthor()+" was not added");
+                }
+              if (choice == 0) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Info: "
+                            +b.getTitle() + " "+b.getAuthor()+" was added");
+            }
+            }
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());        
+        }
+        }
+        
+        
+            
+
     }//GEN-LAST:event_jAddBookBtnActionPerformed
 
     private void jSetAuthorTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSetAuthorTxtActionPerformed
         // Debug Test
-        String author = jSetAuthorTxt.getText();
-        
-        System.out.println("You Entered: "+ author);
+//        String author = jSetAuthorTxt.getText();
+//        
+//        System.out.println("You Entered: "+ author);
     }//GEN-LAST:event_jSetAuthorTxtActionPerformed
 
     private void jExitAddBookBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jExitAddBookBtnMouseClicked
@@ -204,6 +240,7 @@ public class AddBookMenu extends javax.swing.JFrame {
     private javax.swing.JButton jAddBookBtn;
     private javax.swing.JLabel jAddBookMenuLbl;
     private javax.swing.JButton jExitAddBookBtn;
+    private javax.swing.JLabel jInstructionsLbl;
     private javax.swing.JTextField jSetAuthorTxt;
     private javax.swing.JLabel jSetTitleLbl;
     private javax.swing.JTextField jSetTitleTxt;

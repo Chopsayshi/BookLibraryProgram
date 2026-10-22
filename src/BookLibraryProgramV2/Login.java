@@ -6,23 +6,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class Login {
-    public String username;
-    public String password;
-    public boolean admin;
-    public boolean userExsistKey = false;
-    public boolean passMatchKey = false;
+    private final String username;
+    private final String password;
+    private boolean admin;
+    private boolean userExsistKey = false;
+    private boolean passMatchKey = false;
     
     public Login(String user, String pass){
         this.username = user;
         this.password = pass;
-    }
-    
-    public String getUser() {
-        return this.username;
-    }
-    
-    public String getPass() {
-        return this.password;
     }
     
     public boolean isAdmin() {
@@ -39,11 +31,13 @@ public class Login {
             ResultSet rs = prep.executeQuery();
             
             if(rs.next()) {
+                // The username entered was found in the database
                 this.userExsistKey = true;
                 String dbPass = rs.getString("password");
                 boolean dbAdmin = rs.getBoolean("admin");
             
                 if(dbPass.equals(this.password)) {
+                    // The entered password matches the stored user
                     this.passMatchKey = true;
                     this.admin = dbAdmin;
                 }
@@ -52,7 +46,7 @@ public class Login {
     }catch (SQLException ex) {
         System.err.println(ex.getMessage());        
     }
-        
+        db.closeConnections();
     }
     // Check if the user is in the database 
     public boolean userExsists() {

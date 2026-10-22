@@ -28,6 +28,7 @@ public class AdminMenu extends javax.swing.JFrame {
         jDeleteBooksMenuBtn = new javax.swing.JButton();
         jAddBookMenuBtn = new javax.swing.JButton();
         jUpdateBookBtn = new javax.swing.JButton();
+        jInstructionsLbl = new javax.swing.JLabel();
 
         jAdminMenuLbl.setFont(new java.awt.Font("Calibri", 0, 28)); // NOI18N
         jAdminMenuLbl.setText("Admin Menu");
@@ -54,6 +55,7 @@ public class AdminMenu extends javax.swing.JFrame {
 
         jDeleteBooksMenuBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jDeleteBooksMenuBtn.setText("Delete Books");
+        jDeleteBooksMenuBtn.setEnabled(false);
         jDeleteBooksMenuBtn.addActionListener(this::jDeleteBooksMenuBtnActionPerformed);
 
         jAddBookMenuBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
@@ -64,6 +66,9 @@ public class AdminMenu extends javax.swing.JFrame {
         jUpdateBookBtn.setText("Update Books");
         jUpdateBookBtn.setEnabled(false);
         jUpdateBookBtn.addActionListener(this::jUpdateBookBtnActionPerformed);
+
+        jInstructionsLbl.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jInstructionsLbl.setText("Please select an option:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -81,11 +86,14 @@ public class AdminMenu extends javax.swing.JFrame {
                 .addGap(556, 556, 556))
             .addGroup(layout.createSequentialGroup()
                 .addGap(205, 205, 205)
-                .addComponent(jAddBookMenuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(70, 70, 70)
-                .addComponent(jDeleteBooksMenuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
-                .addComponent(jUpdateBookBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jInstructionsLbl)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jAddBookMenuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(70, 70, 70)
+                        .addComponent(jDeleteBooksMenuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(65, 65, 65)
+                        .addComponent(jUpdateBookBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -95,7 +103,9 @@ public class AdminMenu extends javax.swing.JFrame {
                 .addComponent(jAdminMenu1Lbl)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(180, 180, 180)
+                        .addGap(139, 139, 139)
+                        .addComponent(jInstructionsLbl)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jAddBookMenuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jDeleteBooksMenuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -187,6 +197,7 @@ public class AdminMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jAdminMenuLbl;
     private javax.swing.JButton jDeleteBooksMenuBtn;
     private javax.swing.JButton jExitAdminBtn;
+    private javax.swing.JLabel jInstructionsLbl;
     private javax.swing.JButton jLogoutBtn;
     private javax.swing.JButton jUpdateBookBtn;
     // End of variables declaration//GEN-END:variables
