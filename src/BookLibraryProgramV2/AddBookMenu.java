@@ -183,9 +183,12 @@ public class AddBookMenu extends javax.swing.JFrame {
               if (choice == 0) { 
                 javax.swing.JOptionPane.showMessageDialog(this, "Info: "
                             +b.getTitle() + " "+b.getAuthor()+" was added");
+                
+                    // Since the book is added the text boxes are cleared
+                    jSetTitleTxt.setText("");
+                    jSetAuthorTxt.setText("");
                 }
-              
-              
+                            
             }
             
         } catch (SQLException ex) {

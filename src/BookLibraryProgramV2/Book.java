@@ -8,6 +8,7 @@ import java.sql.SQLException;
 public class Book {
     public String title;
     private String author;
+    private int bookid;
     private boolean available = true;
     private boolean matchTitle = false;
     private boolean bookMatch = false;
@@ -37,12 +38,17 @@ public class Book {
         this.available = true;
     }
     
+    @Override
+    public String toString(){
+        return "Book ID:"+this.bookid+" Title: "+ this.title + " Author: "+this.author+" Avaialbility: "+this.available;
+    }
+    
     public void bookExsists() throws SQLException  {
-        DBManager newdb = new DBManager();
+        DBManager db = new DBManager();
         
         String sql = "SELECT author FROM BOOK where title = ?";
         
-        try (PreparedStatement prep = newdb.getConnection().prepareStatement(sql)) {
+        try (PreparedStatement prep = db.getConnection().prepareStatement(sql)) {
              prep.setString(1, this.title);
              ResultSet rs = prep.executeQuery();
             
@@ -57,11 +63,11 @@ public class Book {
                 }    
                 
             }
+            db.closeConnections();
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());        
         }
        
-        
     }
     
      public boolean matchTitle() {
@@ -73,14 +79,16 @@ public class Book {
     }
     
     public void addBook() throws SQLException {
-        DBManager db = new DBManager();     
+        DBManager db = new DBManager(); 
+        GetBooks gb = new GetBooks();
         
-        String sql = "INSERT INTO PDC.BOOK (title, author, available) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO PDC.BOOK (bookid,title, author, available) VALUES (?,?, ?, ?)";
         try (PreparedStatement prep = db.getConnection().prepareStatement(sql)) {
             
-            prep.setString(1, this.title);
-            prep.setString(2, this.author);
-            prep.setBoolean(3, true);
+            prep.setInt(1, gb.countBooks() + 1);
+            prep.setString(2, this.title);
+            prep.setString(3, this.author);
+            prep.setBoolean(4, true);
 
             prep.executeUpdate();
             
@@ -92,18 +100,4 @@ public class Book {
         } 
     }
     
-    
-    // For delete and borrow book menus
-    public void displayAvailableBooks() {
-        
-    }
-    
-    // For return menu
-    public void displayUnvailableBooks() {
-        
-    }
-    
-    public void deleteBook() {
-        
-    }
 }
