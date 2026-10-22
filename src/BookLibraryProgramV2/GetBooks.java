@@ -38,8 +38,8 @@ public class GetBooks {
     
     public int countBooks() {
         int count = 0;
-        GetBooks retrieve = new GetBooks();
-        List<Book> bookList = retrieve.getAllBooks();
+        GetBooks gb = new GetBooks();
+        List<Book> bookList = gb.getAllBooks();
         for (Book b : bookList) {
             count++;
         }
@@ -47,13 +47,13 @@ public class GetBooks {
     }
     
     public static void main(String args[]) {
-        GetBooks retrieve = new GetBooks();
-        List<Book> bookList = retrieve.getAllBooks();
+        GetBooks gb = new GetBooks();
+        List<Book> bookList = gb.getAllBooks();
         for (Book b : bookList) {
             System.out.println(b.toString());
         }
-        retrieve.db.closeConnections();
+        gb.db.closeConnections();
         
-        System.out.println(retrieve.countBooks());
+        System.out.println(gb.countBooks());
     }
 }

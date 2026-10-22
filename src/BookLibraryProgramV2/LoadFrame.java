@@ -85,7 +85,7 @@ public class LoadFrame {
         }
         
         public static void DeleteBookMenu() {
-            DeleteBooksMenu delete = new DeleteBooksMenu();
+            DeleteBookMenu delete = new DeleteBookMenu();
             delete.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
             // Setting screen size

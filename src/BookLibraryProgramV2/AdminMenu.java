@@ -54,8 +54,7 @@ public class AdminMenu extends javax.swing.JFrame {
         jLogoutBtn.addActionListener(this::jLogoutBtnActionPerformed);
 
         jDeleteBooksMenuBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jDeleteBooksMenuBtn.setText("Delete Books");
-        jDeleteBooksMenuBtn.setEnabled(false);
+        jDeleteBooksMenuBtn.setText("Delete Book");
         jDeleteBooksMenuBtn.addActionListener(this::jDeleteBooksMenuBtnActionPerformed);
 
         jAddBookMenuBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
