@@ -32,6 +32,7 @@ public class AddBookMenu extends javax.swing.JFrame {
         jExitAddBookBtn = new javax.swing.JButton();
         jAddBookBackBtn = new javax.swing.JButton();
         jInstructionsLbl = new javax.swing.JLabel();
+        jLogoutBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Library Program: Add Book Menu");
@@ -72,6 +73,10 @@ public class AddBookMenu extends javax.swing.JFrame {
         jInstructionsLbl.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jInstructionsLbl.setText("Please enter both a title and an author:");
 
+        jLogoutBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLogoutBtn.setText("Logout");
+        jLogoutBtn.addActionListener(this::jLogoutBtnActionPerformed);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -102,6 +107,8 @@ public class AddBookMenu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jExitAddBookBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLogoutBtn)
+                .addGap(478, 478, 478)
                 .addComponent(jAddBookBackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
@@ -125,7 +132,8 @@ public class AddBookMenu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 284, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jExitAddBookBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jAddBookBackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jAddBookBackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLogoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -209,6 +217,14 @@ public class AddBookMenu extends javax.swing.JFrame {
         Exit.Exit();
     }//GEN-LAST:event_jExitAddBookBtnActionPerformed
 
+    private void jLogoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLogoutBtnActionPerformed
+        // Switches to LoginMenu
+        LoadFrame.LoginMenu();
+        
+        // Closes this menu
+        this.dispose();
+    }//GEN-LAST:event_jLogoutBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -241,6 +257,7 @@ public class AddBookMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jAddBookMenuLbl;
     private javax.swing.JButton jExitAddBookBtn;
     private javax.swing.JLabel jInstructionsLbl;
+    private javax.swing.JButton jLogoutBtn;
     private javax.swing.JTextField jSetAuthorTxt;
     private javax.swing.JLabel jSetTitleLbl;
     private javax.swing.JTextField jSetTitleTxt;

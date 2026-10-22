@@ -29,6 +29,7 @@ public class DeleteBooksMenu extends javax.swing.JFrame {
         jExitDeleteBookBtn = new javax.swing.JButton();
         jDeleteBooksMenuLbl = new javax.swing.JLabel();
         jDeleteBooksBackBtn = new javax.swing.JButton();
+        jLogoutBtn = new javax.swing.JButton();
 
         jExitBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jExitBtn.setText("Exit");
@@ -71,6 +72,10 @@ public class DeleteBooksMenu extends javax.swing.JFrame {
         jDeleteBooksBackBtn.setText("Back");
         jDeleteBooksBackBtn.addActionListener(this::jDeleteBooksBackBtnActionPerformed);
 
+        jLogoutBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLogoutBtn.setText("Logout");
+        jLogoutBtn.addActionListener(this::jLogoutBtnActionPerformed);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -81,6 +86,8 @@ public class DeleteBooksMenu extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jExitDeleteBookBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLogoutBtn)
+                        .addGap(493, 493, 493)
                         .addComponent(jDeleteBooksBackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(17, 17, 17))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -112,7 +119,8 @@ public class DeleteBooksMenu extends javax.swing.JFrame {
                 .addGap(87, 87, 87)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jExitDeleteBookBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jDeleteBooksBackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jDeleteBooksBackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLogoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -141,6 +149,13 @@ public class DeleteBooksMenu extends javax.swing.JFrame {
         // Closes Program
         Exit.Exit();
     }//GEN-LAST:event_jExitDeleteBookBtnActionPerformed
+
+    private void jLogoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLogoutBtnActionPerformed
+        // Switches to LoginMenu
+        LoadFrame.LoginMenu();
+        
+        // Closes this menu
+        this.dispose();    }//GEN-LAST:event_jLogoutBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,6 +189,7 @@ public class DeleteBooksMenu extends javax.swing.JFrame {
     private javax.swing.JButton jExitBtn;
     private javax.swing.JButton jExitDeleteBookBtn;
     private javax.swing.JList<String> jList1;
+    private javax.swing.JButton jLogoutBtn;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel jSelectBooksLbl;
     // End of variables declaration//GEN-END:variables

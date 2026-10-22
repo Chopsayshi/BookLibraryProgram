@@ -128,8 +128,6 @@ public class AdminMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jExitAdminBtnMouseClicked
 
     private void jLogoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLogoutBtnActionPerformed
-        //TO DO: Clear saved user
-        
         // Switches to LoginMenu
         LoadFrame.LoginMenu();
         

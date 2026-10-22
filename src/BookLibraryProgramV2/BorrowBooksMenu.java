@@ -29,6 +29,7 @@ public class BorrowBooksMenu extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jBorrowBooksBtn = new javax.swing.JButton();
+        jLogoutBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Library Program: Borrow Book Menu");
@@ -63,6 +64,10 @@ public class BorrowBooksMenu extends javax.swing.JFrame {
         jBorrowBooksBtn.setText("Borrow Books");
         jBorrowBooksBtn.addActionListener(this::jBorrowBooksBtnActionPerformed);
 
+        jLogoutBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLogoutBtn.setText("Logout");
+        jLogoutBtn.addActionListener(this::jLogoutBtnActionPerformed);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -70,6 +75,8 @@ public class BorrowBooksMenu extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jExitBorrowBookBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(462, 462, 462)
+                .addComponent(jLogoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jBorrowBooksBackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
@@ -95,8 +102,9 @@ public class BorrowBooksMenu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 609, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBorrowBooksBackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jExitBorrowBookBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(13, 13, 13))
+                    .addComponent(jExitBorrowBookBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLogoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(114, 114, 114)
@@ -133,6 +141,14 @@ public class BorrowBooksMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jBorrowBooksBtnActionPerformed
 
+    private void jLogoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLogoutBtnActionPerformed
+        // Switches to LoginMenu
+        LoadFrame.LoginMenu();
+        
+        // Closes this menu
+        this.dispose();
+    }//GEN-LAST:event_jLogoutBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -164,6 +180,7 @@ public class BorrowBooksMenu extends javax.swing.JFrame {
     private javax.swing.JButton jBorrowBooksBtn;
     private javax.swing.JButton jExitBorrowBookBtn;
     private javax.swing.JList<String> jList1;
+    private javax.swing.JButton jLogoutBtn;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel jSelectBooksLbl;
     // End of variables declaration//GEN-END:variables

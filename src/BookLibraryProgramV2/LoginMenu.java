@@ -150,17 +150,15 @@ public class LoginMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jUsernameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUsernameTxtActionPerformed
-        // Debug Test
+        // Debug Test: Check input
 //        String username = jUsernameTxt.getText();
-//        
 //        System.out.println("You Entered: "+ username);
     }//GEN-LAST:event_jUsernameTxtActionPerformed
 
     private void jPasswordTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordTxtActionPerformed
-        // Debug Test
+        // Debug Test: Check input
 //        char[] passwordChar = jPasswordTxt.getPassword();
 //        String password = new String(passwordChar);
-//        
 //        System.out.println("Pass Entered: "+ password);
     }//GEN-LAST:event_jPasswordTxtActionPerformed
 
@@ -170,7 +168,7 @@ public class LoginMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jExitLoginBtnMouseClicked
 
     private void jAddUserBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAddUserBtnActionPerformed
-        // Switches to the Add User Menu
+        // Switches to AddUserMenu
         LoadFrame.AddUserMenu();
         
         // Closes this menu
@@ -178,18 +176,23 @@ public class LoginMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jAddUserBtnActionPerformed
 
     private void jLoginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLoginBtnActionPerformed
-        // Debug Test
+        // Saves userinputs 
         String username = jUsernameTxt.getText();
         char[] passwordChar = jPasswordTxt.getPassword();
         String password = new String(passwordChar);
         
+        // Debug Test: Check Inputs
 //        System.out.println("You Entered: "+ username +" Password: " + password);
         
+        // Stores user inputs into the log instance of Login
         Login log = new Login(username,password);
         
+        // Will try to check if the user inputs are valid
         try {
             log.checkUserDetails();
+            // Check if the username is in the database
             if (log.userExsists()) {
+            // Will check if the password matches the found users database password
             if (log.passMatch()) {
                 // Password and username match a single user
                 if(log.isAdmin()){
@@ -216,7 +219,8 @@ public class LoginMenu extends javax.swing.JFrame {
         }
             
         } catch (SQLException ex) {
-            System.getLogger(LoginMenu.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+           // If something goes wrong it will send an error message to the console
+            System.err.println(ex.getMessage()); 
         }
         
     }//GEN-LAST:event_jLoginBtnActionPerformed

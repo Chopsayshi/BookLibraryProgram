@@ -28,6 +28,7 @@ public class ReturnBooksMenu extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jReturnBooksBtn = new javax.swing.JButton();
+        jLogoutBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Library Program: Return Book Menu");
@@ -61,6 +62,10 @@ public class ReturnBooksMenu extends javax.swing.JFrame {
         jReturnBooksBtn.setText("Return Books");
         jReturnBooksBtn.addActionListener(this::jReturnBooksBtnActionPerformed);
 
+        jLogoutBtn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLogoutBtn.setText("Logout");
+        jLogoutBtn.addActionListener(this::jLogoutBtnActionPerformed);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -72,6 +77,8 @@ public class ReturnBooksMenu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jExitReturnBookBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(457, 457, 457)
+                .addComponent(jLogoutBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jReturnBooksBackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22))
@@ -90,13 +97,15 @@ public class ReturnBooksMenu extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jReturnBooksMenuLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 616, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 615, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jReturnBooksBackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20))
+                        .addGap(21, 21, 21))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jExitReturnBookBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jExitReturnBookBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLogoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap())))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -134,6 +143,14 @@ public class ReturnBooksMenu extends javax.swing.JFrame {
         Exit.Exit();
     }//GEN-LAST:event_jExitReturnBookBtnActionPerformed
 
+    private void jLogoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLogoutBtnActionPerformed
+        // Switches to LoginMenu
+        LoadFrame.LoginMenu();
+        
+        // Closes this menu
+        this.dispose();
+    }//GEN-LAST:event_jLogoutBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -162,6 +179,7 @@ public class ReturnBooksMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jExitReturnBookBtn;
     private javax.swing.JList<String> jList1;
+    private javax.swing.JButton jLogoutBtn;
     private javax.swing.JButton jReturnBooksBackBtn;
     private javax.swing.JButton jReturnBooksBtn;
     private javax.swing.JLabel jReturnBooksMenuLbl;
